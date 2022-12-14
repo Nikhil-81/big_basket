@@ -4,8 +4,8 @@ import Cart from '../Pages/Cart/Cart';
 import Checkout from '../Pages/Checkout/Checkout';
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
-import AllProduct from '../Pages/Product/AllProduct';
-import SingleProduct from '../Pages/Product/SingleProduct';
+import {AllProduct} from '../Pages/Product/AllProduct';
+import {SingleProduct} from '../Pages/Product/SingleProduct';
 import Signup from '../Pages/Signup/Signup';
 // import Admin from "../Pages/Admin/Dashboard/admin"
 // import AddProduct from '../Pages/Admin/AddProduct/AddProduct';
