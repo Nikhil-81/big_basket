@@ -1,13 +1,14 @@
 import { Center, Wrap, WrapItem } from '@chakra-ui/react'
 import React, { useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import AddressForm from '../Components/AddressForm'
-import { getAdd } from '../Redux/action'
-import "../Styles/Checkout.css"
+import { getAdd } from '../../Redux/Checkout/action'
+import AddressForm from '../../Components/CheckoutComps/AddressForm'
+import "./Checkout.css"
 
 const Checkout = () => {
     const dispatch = useDispatch()
-    const AllAddress = useSelector((store) => store.AllAddress)
+    const AllAddress = useSelector((store) => store.checkout.AllAddress)
+    console.log(AllAddress)
     const [style, setStyle] = useState("AddressBoxsmall");
     const [ns, setNs] = useState("")
 
