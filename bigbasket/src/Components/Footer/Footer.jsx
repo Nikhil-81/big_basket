@@ -1,16 +1,16 @@
 import { Box, Image, Text } from "@chakra-ui/react";
-import facebook from "../assets/facebook.png";
-import instagram from "../assets/instagram.png";
-import painter from "../assets/painter.png";
-import twitter from "../assets/twitter.png";
-import Apple from "../assets/Apple-App-store-icon.png";
-import A_Express from "../assets/american-express.png";
-import cod from "../assets/cod.png"
-import mastercard from "../assets/mastercard.png";
-import rupay from "../assets/rupay.png";
-import visa from "../assets/visa.png";
-import paytm from "../assets/paytm.png"
-import "./footer.css";
+import facebook from "../../assets/facebook.png";
+import instagram from "../../assets/instagram.png";
+import painter from "../../assets/painter.png";
+import twitter from "../../assets/twitter.png";
+import Apple from "../../assets/Apple-App-store-icon.png";
+import A_Express from "../../assets/american-express.png";
+import cod from "../../assets/cod.png"
+import mastercard from "../../assets/mastercard.png";
+import rupay from "../../assets/rupay.png";
+import visa from "../../assets/visa.png";
+import paytm from "../../assets/paytm.png"
+import "./Footer.css";
 const Footer = () => {
   return (
     <div>

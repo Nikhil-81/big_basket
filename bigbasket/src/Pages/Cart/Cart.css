@@ -1,0 +1,8 @@
+.cart_window{
+    width: 80% !important;
+    margin: auto;
+} 
+
+.cart_table_header{
+    background-color: gray;
+}
