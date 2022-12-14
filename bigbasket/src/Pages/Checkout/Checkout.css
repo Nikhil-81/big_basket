@@ -1,0 +1,112 @@
+
+.Checkout{
+    margin: auto;
+    width: 80%;
+    
+}
+.fake{
+    width: 100%;
+    height: 110px;
+    margin-bottom: 20px;
+}
+.Allbody{
+    display: flex;
+    gap: 25px;
+}
+.leftside{
+    display: block;
+    
+}
+.AddressBoxbig{
+    border: 1px solid grey;
+    width: 850px;
+    height: fit-content;
+    margin-bottom: 15px; 
+}
+.AddressBoxsmall{
+    border: 1px solid red;
+    width: 850px;
+    height: fit-content;
+    margin-bottom: 15px;  
+}
+.addresscard{
+    width: 300px;
+    border: 1px solid red;
+}
+.delivery{
+    border: 1px solid grey;
+    width: 850px;
+    height: fit-content;
+    margin-bottom: 15px;
+}
+.paymentbox{
+ 
+    width: 850px;
+    height: fit-content;
+    margin-bottom: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    background-color: rgb(253, 247, 238);
+}
+
+ @media only screen and (max-width: 1200px) {
+.Checkout{
+    margin: auto;
+    width: 80%;
+}
+.fake{
+    width: 100%;
+    height: 110px;
+    margin-bottom: 20px;
+}
+.Allbody{
+    display: block;
+    gap: 25px;
+}
+.AddressBox{
+    border: 1px solid grey;
+    width: 650px;
+    height: fit-content;
+    display: flex;
+
+}
+.delivery{
+    border: 1px solid grey;
+    width: 650px;
+    height: fit-content;
+    margin-bottom: 15px;
+    
+}
+.payment{
+    border: 1px solid grey;
+    width: 650px;
+    height: fit-content;
+    margin-bottom: 15px;
+}
+.add{
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: rgb(79, 79, 79);
+    
+}
+.inpname{
+    display: flex;
+    gap: 20px;
+}
+.name{
+    width: 300px;
+}
+.address{
+    width: 535px;
+}
+
+
+}
+
+@media only screen and (max-width: 420px) {
+    .Allbody{
+        display: block;
+        gap: 25px;
+    }
+}
