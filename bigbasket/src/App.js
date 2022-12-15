@@ -1,7 +1,10 @@
 
 import './App.css';
 import AllRoutes from './All-Routes/AllRoutes';
-import Cart from './Pages/Cart/Cart';
+
+=======
+
+>>>>>>> b606b92f86ef49867c6260420e18c15dd5336484
 
 
 
@@ -9,8 +12,9 @@ import Cart from './Pages/Cart/Cart';
 function App() {
   return (
     <div className="App">
-  <Cart/>
+  
   <AllRoutes/>
+  
     </div>
   );
 }
