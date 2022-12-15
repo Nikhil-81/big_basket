@@ -23,7 +23,7 @@ export const addaddressfail=()=>{
 
 export const getAdd=(dispatch)=>{
     dispatch(getaddressreq())
-    return axios.get(`http://localhost:8080/AllAddress`)
+    return axios.get(`https://bigbasket-server.onrender.com/AllAddress`)
     .then((r)=>{
         dispatch(getaddresssucc(r.data))
     })
@@ -44,7 +44,7 @@ export const AddingAdd=(data)=>(dispatch)=>{
             pin:data.pin,
             house:data.house
         }
-    return axios.post(`http://localhost:8080/AllAddress`,payload)
+    return axios.post(`https://bigbasket-server.onrender.com/AllAddress`,payload)
     .then((r)=>{
         console.log(r.data)
         dispatch(addaddresssucc(r.data))
