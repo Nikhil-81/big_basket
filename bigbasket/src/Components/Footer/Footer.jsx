@@ -111,18 +111,18 @@ const Footer = () => {
           <Box className="P-options">
             <Text fontSize={16} color="#84c225">PAYMENT OPTIONS:</Text>
             <Box className="options">
-              <Image w={10} h={10} src={cod} alt="icons"/>
-              <Image w={10} h={10} src={visa} alt="icons"/>
-              <Image w={10} h={10} src={rupay} alt="icons"/>
-              <Image w={10} h={10} src={paytm} alt="icons"/>
-              <Image w={10} h={10} src={mastercard} alt="icons"/>
-              <Image w={10} h={10} src={A_Express} alt="icons"/>
+              <Image w={10} h={10} src={cod} alt="icons" />
+              <Image w={10} h={10} src={visa} alt="icons" />
+              <Image w={10} h={10} src={rupay} alt="icons" />
+              <Image w={10} h={10} src={paytm} alt="icons" />
+              <Image w={10} h={10} src={mastercard} alt="icons" />
+              <Image w={10} h={10} src={A_Express} alt="icons" />
             </Box>
           </Box>
         </Box>
 
         <Box w="100%" bg="#eaeaea" h="30px" >
-            <Text w="82%" margin="auto"  textAlign="center" alignItems="center" fontSize={13} color="#777474" >Copyright © 2021-2023 Supermarket Grocery Supplies Pvt Ltd</Text>
+          <Text w="82%" margin="auto" textAlign="center" alignItems="center" fontSize={13} color="#777474" >Copyright © 2021-2023 Supermarket Grocery Supplies Pvt Ltd</Text>
         </Box>
       </Box>
     </div>
