@@ -8,7 +8,8 @@ import Checkout from './Pages/Checkout/Checkout';
 function App() {
   return (
     <div className="App">
-      <Checkout />
+      {/* <Checkout /> */}
+      <Cart/>
   <AllRoutes/>
     </div>
   );

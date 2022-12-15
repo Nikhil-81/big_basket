@@ -36,6 +36,7 @@ function hendleCartClickRemove_itrm(item){
 
   if(cart_store.cartData[0]==undefined){
     return (
+
         <>
         <Hide  breakpoint='(max-width: 500px)'>
             <Text fontSize="3xl" >There are no items in your basket</Text>
@@ -61,12 +62,8 @@ function hendleCartClickRemove_itrm(item){
 }
 
 
-
-
-
-
     return (
-        <div className="cart_window"  >
+        <div className="cart_window" >
         <TableContainer>
 <Table  variant='unstyled' colorScheme='gray' >
 <Thead>
