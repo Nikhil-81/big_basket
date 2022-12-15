@@ -8,7 +8,7 @@ import "./Checkout.css"
 const Checkout = () => {
     const dispatch = useDispatch()
     const AllAddress = useSelector((store) => store.checkout.AllAddress)
-    console.log(AllAddress)
+    // console.log(AllAddress)
     const [style, setStyle] = useState("AddressBoxsmall");
     const [ns, setNs] = useState("")
 
