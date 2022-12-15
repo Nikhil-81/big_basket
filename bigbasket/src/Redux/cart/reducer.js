@@ -7,7 +7,34 @@ import {GET_CART_REQUEST,GET_CART_SUCCESS,GET_CART_FAILURE,
 
 
    const initcartstate={
-    cartLoding:false,cartSucess:false,casrError:false,cartData:[],cartId:[19],subTotal:Number(7.95)
+    cartLoding:false,cartSucess:false,casrError:false,cartData:[
+        {
+            "id": 19,
+            "title": "Opna Women's Short Sleeve Moisture",
+            "price": 7.95,
+            "description": "100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort",
+            "category": "women's clothing",
+            "image": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
+            "rating": {
+              "rate": 4.5,
+              "count": 146
+            },
+            "qty":1
+          },
+          {
+            "id": 1,
+            "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+            "price": 109.95,
+            "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+            "category": "men's clothing",
+            "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+            "rating": {
+              "rate": 3.9,
+              "count": 120
+            },
+            "qty":1
+          }
+    ],cartId:[19],subTotal:Number(7.95)
    } 
 export const cartReducer=(state=initcartstate,{type,payload})=>{
 switch(type){

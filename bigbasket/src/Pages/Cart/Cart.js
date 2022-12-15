@@ -59,13 +59,13 @@ function Cart() {
   </Tr>
 </Thead>
 <Tbody>
-    {cart_store.cartData.map(el=>(<Tr>
+    {cart_store.cartData.map(el=>(<Tr className="Cart_table_row" >
         <Cart_row cartItemName={el.title} hendlecartUpdate={(val)=>hendlecartUpdate(val,el)} cartItemPrice={el.price} cartItemQuantity={el.qty} cartItemTotal={el.qty*el.price}/>
-
     </Tr>))}
 </Tbody>
 </Table>
 </TableContainer>
+
     </div>
 )
 }
