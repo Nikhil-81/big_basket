@@ -1,0 +1,22 @@
+.categoryD{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+    line-height: 25px;
+   
+}
+.categoryD p:hover{
+    cursor: pointer;
+    color: rgb(23, 184, 23);
+}
+@media screen and (max-width: 950px) {
+    .categoryD{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto;
+        gap: 5px;
+        line-height: 20px;
+       
+    }
+}

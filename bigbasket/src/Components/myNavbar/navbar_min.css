@@ -1,0 +1,22 @@
+.navMin{
+    /* w="100%" h="auto" position="fixed" bg="#689f38" display="flex" */
+    width: 100%;
+    height: auto;
+    position: fixed;
+    background-color: #689f38;
+  
+
+}
+.navContent{
+    width: 100%;
+    display: flex;
+   padding: 20px;
+    justify-content: space-between;
+}
+.navContent :hover{
+    cursor: pointer;
+}
+::placeholder{
+    text-align: center;
+    
+}
