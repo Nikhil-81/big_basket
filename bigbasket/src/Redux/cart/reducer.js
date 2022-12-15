@@ -34,7 +34,7 @@ import {GET_CART_REQUEST,GET_CART_SUCCESS,GET_CART_FAILURE,
             },
             "qty":1
           }
-    ],cartId:[19],subTotal:Number(7.95)
+    ],cartId:[19,1],subTotal:Number(117.9)
    } 
 export const cartReducer=(state=initcartstate,{type,payload})=>{
 switch(type){
@@ -99,7 +99,7 @@ switch(type){
         console.log("reducer",itemToUpdate,payload.val,payload.item.qty)
 
     return ({...state,cartLoding:false,cartSucess:true,casrError:false,
-       subTotal:(state.subTotal+=Number(Number(payload.item.price)*Number(payload.val))),
+       subTotal:(state.subTotal+=Number((payload.item.price)*(payload.val))),
        cartData:[...state.cartData.map(el=>el.id==payload.item.id?({...el,qty:el.qty+=Number(payload.val)}):el)]
         
     })

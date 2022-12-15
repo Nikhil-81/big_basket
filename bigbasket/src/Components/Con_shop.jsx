@@ -1,8 +1,10 @@
 import { Box } from "@chakra-ui/react";
 
-export default function ContinueShopping(){
+export default function ContinueShopping({cartbuttonname,hendleCartbutton}){
     return(
         <Box
+        className="continueShoppingButton"
+        onClick={hendleCartbutton}
   as='button'
   height='45px'
   lineHeight='1.2'
@@ -25,7 +27,7 @@ export default function ContinueShopping(){
       '0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)',
   }}
 >
-  Continue Shopping
+  {cartbuttonname}
 </Box>
     )
 }

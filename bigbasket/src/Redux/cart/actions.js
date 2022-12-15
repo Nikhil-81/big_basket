@@ -17,9 +17,10 @@ catch(err){
 
 }
 
-export const getCart=()=>(dispatch)=>{
-  
-}
+
+
+
+
 
 export const removeCart=(item)=>(dispatch)=>{
     dispatch({type:REMOVE_FROM_CART_REQUEST})
@@ -31,6 +32,10 @@ export const removeCart=(item)=>(dispatch)=>{
     }
 }
 
+
+
+
+
 export const updateCart=(val,item)=>(dispatch)=>{
     dispatch({type:UPDATE_CART_REQUEST})
     try{
@@ -40,3 +45,15 @@ export const updateCart=(val,item)=>(dispatch)=>{
         dispatch({type:UPDATE_CART_FAILURE})
     }
 }
+
+
+export const clearCart=()=>(dispatch)=>{
+    dispatch({type:CLEAR_CART_REQUEST})
+    try{
+        dispatch({type:CLEAR_CART_SUCCESS})
+    }
+    catch(err){
+        dispatch({type:CLEAR_CART_FAILURE})
+    }
+}
+
