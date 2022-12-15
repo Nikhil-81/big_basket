@@ -5,11 +5,11 @@ import Cart from './Pages/Cart/Cart';
 import Checkout from './Pages/Checkout/Checkout';
 
 
+
 function App() {
   return (
     <div className="App">
-      {/* <Checkout /> */}
-      <Cart/>
+<Cart/>
   <AllRoutes/>
     </div>
   );
