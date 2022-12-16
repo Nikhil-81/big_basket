@@ -34,6 +34,9 @@ import {GET_CART_REQUEST,GET_CART_SUCCESS,GET_CART_FAILURE,
             },
             "qty":1
           }
+         
+       
+        
     ],cartId:[19,1],subTotal:Number(117.9)
    } 
 export const cartReducer=(state=initcartstate,{type,payload})=>{
