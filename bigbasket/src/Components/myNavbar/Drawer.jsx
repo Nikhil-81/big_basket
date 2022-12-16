@@ -15,6 +15,7 @@ import "./Drawer.css"
 import React from "react";
 import DrawerBottom from "./BottomDrower";
 import Location from "./location";
+import Login from "../../Pages/Login/Login";
 const DrawerHam = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
@@ -39,7 +40,7 @@ const DrawerHam = () => {
               bg="black"
               border="1px solid white"
             >
-              Login/Sign UP
+              <Login/>
             </Button>
           </DrawerHeader>
 

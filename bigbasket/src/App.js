@@ -4,15 +4,14 @@ import AllRoutes from './All-Routes/AllRoutes';
 import Cart from './Pages/Cart/Cart';
 import Checkout from './Pages/Checkout/Checkout';
 import Navbar from './Components/Navbar/Navbar';
+import Login from './Pages/Login/Login';
 
 
 function App() {
   return (
     <div>
-      {/* <Checkout /> */}
-      {/* <Navbar/> */}
-      <Cart/>
   <AllRoutes/>
+  <Login/>
     </div>
   );
 }

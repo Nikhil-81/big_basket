@@ -17,6 +17,7 @@ import Category from "./catagory";
 import {BsTelephone} from "react-icons/bs"
 import {CgProfile} from "react-icons/cg"
 import {FaTag} from "react-icons/fa"
+import Login from "../../Pages/Login/Login";
 const NavbarMain = () => {
   const [isShown, setIsShown] = useState(false);
   useEffect(() => {}, [isShown]);
@@ -35,7 +36,7 @@ const NavbarMain = () => {
               <Location />
             </Box>
             <Box display="flex" textAline="center">
-              <CgProfile fontSize={20} />  Login/Sign Up
+              <CgProfile fontSize={20} />  <Login/>
             </Box>
           </Box>
           <Box className="box-2">

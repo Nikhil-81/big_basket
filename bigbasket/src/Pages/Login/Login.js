@@ -68,7 +68,7 @@ export default function Login() {
   // --------------------------------------------------
   return (
     <>
-      <Button onClick={onOpen}>LOGIN / SIGN UP</Button>
+      <Text fontSize={12} pl="2" onClick={onOpen}>Login / Sign Up</Text>
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
@@ -110,6 +110,7 @@ export default function Login() {
                   <FormLabel mt={"15px"}>Enter Email</FormLabel>
                   <Input
                     variant={"flushed"}
+                    pl="2"
                     borderBottom="2px solid"
                     type="email"
                     h={"40px"}
@@ -123,6 +124,7 @@ export default function Login() {
                   <FormLabel mt={"15px"}>Enter Password</FormLabel>
                   <Input
                     variant={"flushed"}
+                    pl="2"
                     borderBottom="2px solid"
                     type="password"
                     h={"40px"}
