@@ -1,5 +1,5 @@
 .cart_window{
-    width: 80% !important;
+    width: 75% !important;
     margin: auto;
 } 
 
@@ -103,4 +103,22 @@
     text-align: start;
     color: green;
 
+}
+
+/* @media screen and (max-width:1200px) {
+    .cart_window{
+        width: 55% !important;
+        margin: auto;
+    } 
+    
+} */
+
+.cart_min_box{
+
+    background:white;
+    height:90%;
+    margin-top:6.5%;
+    padding-top:2rem;
+    box-shadow:  rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    overflow: scroll;
 }
