@@ -9,9 +9,9 @@ import Navbar from './Components/Navbar/Navbar';
 function App() {
   return (
     <div>
-      {/* <Checkout /> */}
+      <Checkout />
       {/* <Navbar/> */}
-      <Cart/>
+      {/* <Cart/> */}
   <AllRoutes/>
     </div>
   );

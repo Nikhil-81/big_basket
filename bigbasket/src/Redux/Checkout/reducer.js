@@ -28,6 +28,15 @@ const reducer = (state=initialState,action) => {
         case types.ADD_ADDRESS_ERROR:{
             return {...state,isLoading:false,isError:true}
         }
+        case types.DELETE_ADDRESS_REQUEST:{
+            return {...state,isLoading:true}
+        }
+        case types.DELETE_ADDRESS_SUCCESS:{
+            return {...state,isLoading:false,AllAddress:payload}
+        }
+        case types.DELETE_ADDRESS_ERROR:{
+            return {...state,isLoading:false,isError:true}
+        }
         default:return state
     }
   

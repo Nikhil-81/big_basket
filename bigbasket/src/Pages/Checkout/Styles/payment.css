@@ -1,0 +1,375 @@
+.payment{
+    display: block;
+    background-color: rgb(253, 247, 238);
+}
+.options{
+    display: flex;
+    height: 95px;
+    justify-content: space-between;
+}
+.offer{
+   
+    width: 399px;
+    margin-top: 15px;
+    margin-left: 15px;
+    border: 1px solid grey;
+    border-bottom: none;
+}
+.offer>h1{
+    color: rgb(41, 41, 41);
+    font-family: sans-serif;
+    font-size: large;
+    font-weight: 600;
+    margin-left: 5px;
+}
+.offer>h3{
+    color: rgb(63, 63, 63);
+    font-size: medium;
+    margin-left: 5px;
+}
+.other{
+    margin-top: 15px;
+    width: 399px;
+    height: 80px;
+    border: 1px solid grey;
+    margin-right: 15px;
+    border-bottom: none;
+    text-align: start;
+    padding-left: 20px;
+    
+}
+.other>h1{
+    color: rgb(41, 41, 41);
+    font-family: sans-serif;
+    font-size: large;
+    font-weight: 600;
+}
+.other>h3{
+    color: rgb(63, 63, 63);
+    font-size: medium;
+    
+}
+.detailsother{
+    
+    width: 818px;
+    margin-left: 15px;
+    /* height: 470px; */
+    background-color: white;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    border: 1px solid grey;
+    border-right: none;
+    border-bottom: none;
+}
+
+.detailsoffer{
+    border: 1px solid grey;
+    width: 818px;
+    margin-left: 15px;
+    height: auto;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    border-left: none;
+    border-bottom: none;
+    
+}
+.payoffer{
+    width: 798px;
+    border: 1px solid rgb(206, 203, 203);
+    margin-bottom: 9px;
+    
+}
+.detailsotherbox{
+    display: flex;
+    height: 100%;
+}
+.leftother{
+    /* border: 1px solid red; */
+    width: 170px;
+    height: 100%;
+    display: block;
+    
+}
+.rightother{
+    /* border: 1px solid blue; */
+    width: 77%;
+    /* height: 100%; */
+    justify-content: center;
+    align-items: center;
+    background-color:  rgb(253, 247, 238);
+}
+.leftothercomp{
+    border: 1px solid rgb(196, 191, 191);
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+        
+}
+.leftothercomp>h1{
+    color: rgb(43, 43, 43);
+    font-family:Arial, Helvetica, sans-serif;
+    margin-top: 15px;
+}
+.rightotherbox{
+    width: 450px;
+    margin: auto;
+    border: 1px solid grey;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 0px;
+    background-color: white;
+}
+.netbank{
+   
+    background-color: white;
+    width: 88%;
+    margin: auto;
+    margin-top: 20px;
+}
+.upiother{
+    width: 450px;
+    margin: auto;
+    border: 1px solid grey;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 0px;
+    background-color: white;
+    text-align: start;
+}
+
+
+@media only screen and (max-width: 1200px) {
+
+    .offer{
+   
+        width: 399px;
+        margin-top: 15px;
+        margin-left: 15px;
+        border: 1px solid grey;
+        border-bottom: none;
+    }
+    .offer>h1{
+        color: rgb(78, 77, 77);
+        font-family: sans-serif;
+        margin-left: -50px;
+        font-size: medium;
+        font-weight: 500;
+    }
+    .offer>h3{
+        color: grey;
+        font-size: small;
+        
+    }
+    .other{
+        margin-top: 15px;
+        width: 399px;
+        height: 80px;
+        border: 1px solid grey;
+        margin-right: 15px;
+        border-bottom: none;
+        
+    }
+    .detailsother{
+        
+        width: 617px;
+        margin-left: 15px;
+        /* height: 470px; */
+        background-color: white;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        padding-left: 10px;
+        border: 1px solid grey;
+        border-right: none;
+    }
+    
+    .detailsoffer{
+        border: 1px solid grey;
+        width: 618px;
+        margin-left: 15px;
+        height: auto;
+        background-color: white;
+        justify-content: center;
+        align-items: center;
+        display: block;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        padding-left: 10px;
+        border-left: none;
+        border-bottom: none;
+        
+    }
+    .payoffer{
+        width: 600px;
+        border: 1px solid rgb(206, 203, 203);
+        margin-bottom: 9px;
+        
+    }
+    .rightotherbox{
+        width: 380px;
+        margin: auto;
+        border: 1px solid grey;
+        margin-top: 30px;
+        padding: 20px;
+        border-radius: 0px;
+        background-color: white;
+    }
+
+
+}
+
+@media only screen and (max-width: 420px) {
+
+    .payment{
+        display: block !important;
+        background-color: rgb(253, 247, 238);
+    }
+    .options{
+        display: block !important;
+        height: 95px;
+        justify-content: space-between;
+    }
+    .offer{
+       
+        width: 310px;
+        margin-top: 15px;
+        margin-left: 15px;
+        border: 1px solid grey;
+        
+    }
+    .offer>h1{
+        color: rgb(41, 41, 41);
+        font-family: sans-serif;
+        /* margin-left: -27px; */
+        font-size: large;
+        font-weight: 600;
+        margin-left: 0px;
+    }
+    .offer>h3{
+        color: rgb(63, 63, 63);
+        font-size: small;
+        
+    }
+    .other{
+        margin-top: 15px;
+        width: 310px;
+        height: 80px;
+        border: 1px solid grey;
+        margin-right: 15px;
+        
+        text-align: start;
+        padding-left: 20px;
+        margin-left: 15px;
+    }
+    .other>h1{
+        color: rgb(41, 41, 41);
+        font-family: sans-serif;
+        font-size: large;
+        font-weight: 600;
+    }
+    .other>h3{
+        color: rgb(63, 63, 63);
+        font-size: small;
+        
+    }
+    .detailsother{
+        margin-top: 100px;
+        width: 310px;
+        margin-left: 15px;
+        /* height: 470px; */
+        background-color: white;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        padding-left: 10px;
+        border: 1px solid grey;
+        
+    }
+    
+    .detailsoffer{
+        border: 1px solid grey;
+        width: 310px;
+        margin-left: 15px;
+        height: auto;
+        background-color: white;
+        justify-content: center;
+        align-items: center;
+        display: block;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        padding-left: 10px;
+        margin-top: 100px;
+        
+    }
+    .payoffer{
+        
+        width: 290px;
+        border: 1px solid rgb(206, 203, 203);
+        margin-bottom: 9px;
+        
+    }
+    .detailsotherbox{
+        display: block;
+        height: 100%;
+    }
+    .leftother{
+        /* border: 1px solid red; */
+        width: 280px;
+        height: 100%;
+        display: block;
+        
+    }
+    .rightother{
+        /* border: 1px solid blue; */
+        width: 98%;
+        /* height: 100%; */
+        justify-content: center;
+        align-items: center;
+        background-color:  rgb(253, 247, 238);
+    }
+    .leftothercomp{
+        border: 1px solid rgb(196, 191, 191);
+        width: 100%;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+            
+    }
+    .leftothercomp>h1{
+        color: rgb(43, 43, 43);
+        font-family:Arial, Helvetica, sans-serif;
+        margin-top: 15px;
+    }
+    .rightotherbox{
+        width: auto;
+        margin: auto;
+        border: 1px solid grey;
+        margin-top: 30px;
+        padding: 20px;
+        border-radius: 0px;
+        background-color: white;
+    }
+    .netbank{
+       
+        background-color: white;
+        width: 88%;
+        margin: auto;
+        margin-top: 20px;
+    }
+    .upiother{
+        width: auto;
+        margin: auto;
+        border: 1px solid grey;
+        margin-top: 30px;
+        padding: 20px;
+        border-radius: 0px;
+        background-color: white;
+        text-align: start;
+    }
+
+}
