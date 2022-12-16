@@ -1,10 +1,10 @@
 .navMin{
-    /* w="100%" h="auto" position="fixed" bg="#689f38" display="flex" */
+    
     width: 100%;
     height: auto;
     position: fixed;
     background-color: #689f38;
-  
+    z-index:50;
 
 }
 .navContent{

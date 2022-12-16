@@ -9,9 +9,10 @@ import {
 } from "@chakra-ui/react";
 
 import DrawerHam from "./Drawer";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+
 import "./navbar_min.css";
 import { Search2Icon } from "@chakra-ui/icons";
+import {CgProfile} from "react-icons/cg"
 const NavbarMin = () => {
   return (
     <Box>
@@ -27,7 +28,7 @@ const NavbarMin = () => {
           >
             bigbasket
           </Heading>
-          <AccountCircleIcon fontSize="large" style={{ color: "white" }} />
+          <CgProfile fontSize={30} style={{ color: "white" }} />
         </Box>
         <Box w="99%" h="auto" margin="auto" mb="5px" bg="white" borderRadius={5} display="flex"> 
         <InputGroup size="sm" width="100%">
