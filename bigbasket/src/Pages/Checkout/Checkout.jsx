@@ -4,63 +4,66 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getAdd } from '../../Redux/Checkout/action'
 import AddressForm from '../../Components/CheckoutComps/AddressForm'
 import "./Checkout.css"
+import AddressCard from '../../Components/CheckoutComps/AddressCard'
+import Payment from '../../Components/CheckoutComps/Payment'
+import OrderSummary from '../../Components/CheckoutComps/OrderSummary'
 
 const Checkout = () => {
     const dispatch = useDispatch()
     const AllAddress = useSelector((store) => store.checkout.AllAddress)
-    // console.log(AllAddress)
     const [style, setStyle] = useState("AddressBoxsmall");
     const [ns, setNs] = useState("")
 
-    // console.log(AllAddress)
-
+    console.log(AllAddress)
     useEffect(() => {
         dispatch(getAdd)
+        changeStyle()
     }, [])
 
     const changeStyle = () => {
 
-        setStyle("AddressBoxbig");
+        if(AllAddress.length>0){
+            setStyle("AddressBoxbig");
+        }
     };
-
-    // const cardclick = (id) => {
-    //     setStyle("AddressBoxsmall");
-    //     console.log("hi")
-    // }
-    console.log(style)
-    console.log(ns)
-    // useEffect(() => {
-    //     if (ns !== "") {
-    //         setStyle()
-    //     } else {
-    //         setStyle("AddressBoxsmall")
-    //     }
-    // }, [ns])
+console.log(style)
+    const cardclick = (id) => {
+        setNs("AddressBoxsmall");
+        console.log("hi")
+    }
+    
+    useEffect(() => {
+        if (ns !== "") {
+            setStyle()
+        } else {
+            setStyle("AddressBoxsmall")
+        }
+    }, [ns])
     return (
         <div className='Checkout'>
             <div className='fake'>
             </div>
             <div className='Allbody'>
                 <div className='leftside'>
-                    <div className={style} onClick={changeStyle}>
+                    <div className={style||ns} onClick={changeStyle}>
                         {/* <div className='addresscard'>
                             
                         </div> */}
 
                         <Wrap justify='space-between'>
-                            {/* {
+                            {
                                 style === "AddressBoxbig" &&
                                 <WrapItem>
                                     <Center >
                                         {
-                                            AllAddress &&
+                                            AllAddress.length>0 &&
                                             AllAddress.map((item) => {
-                                                return (<AddressCard key={item.id} {...item} setStyle={setStyle} />)
+                                                return (<AddressCard key={item.id} cardclick={cardclick} {...item} setStyle={setStyle} />)
                                             })
                                         }
                                     </Center>
                                 </WrapItem>
-                            } */}
+                            }
                             <WrapItem justifyContent={'center'}>
                                 <Center >
                                     <AddressForm />
@@ -69,15 +72,13 @@ const Checkout = () => {
 
                         </Wrap>
                     </div>
-                    <div className="delivery" >
-                        {/* <DeliveryOption /> */}
-                    </div>
+                    
                     <div className="paymentbox" >
-                        {/* <Payment /> */}
+                        <Payment />
                     </div>
                 </div>
                 <div>
-                    {/* <OrderSummary /> */}
+                    <OrderSummary />
                 </div>
             </div>
         </div>

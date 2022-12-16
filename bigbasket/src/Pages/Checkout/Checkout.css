@@ -22,12 +22,15 @@
     width: 850px;
     height: fit-content;
     margin-bottom: 15px; 
+    display: flex;
 }
+
 .AddressBoxsmall{
-    border: 1px solid red;
+    border: 1px solid grey;
     width: 850px;
     height: fit-content;
     margin-bottom: 15px;  
+    
 }
 .addresscard{
     width: 300px;
@@ -67,7 +70,7 @@
     border: 1px solid grey;
     width: 650px;
     height: fit-content;
-    display: flex;
+    display: block;
 
 }
 .delivery{
@@ -83,24 +86,32 @@
     height: fit-content;
     margin-bottom: 15px;
 }
-.add{
-    font-family: sans-serif;
-    font-weight: 300;
-    font-size: 20px;
-    color: rgb(79, 79, 79);
-    
+.paymentbox{
+ 
+    width: 650px;
+    height: fit-content;
+    margin-bottom: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    background-color: rgb(253, 247, 238);
 }
-.inpname{
-    display: flex;
-    gap: 20px;
+.AddressBoxbig{
+    border: 1px solid grey;
+    width: 650px;
+    height: fit-content;
+    margin-bottom: 15px; 
+    display: block;
 }
-.name{
-    width: 300px;
+.AddressBoxsmall{
+    border: 1px solid grey;
+    width: 650px;
+    height: fit-content;
+    margin-bottom: 15px;  
 }
-.address{
-    width: 535px;
+.addresscard{
+    width: 100px;
+    border: 1px solid grey;
 }
-
 
 }
 
@@ -109,4 +120,63 @@
         display: block;
         gap: 25px;
     }
+    .Checkout{
+        margin: auto;
+        width: 80%;
+    }
+    .fake{
+        width: 100%;
+        height: 110px;
+        margin-bottom: 20px;
+    }
+    .Allbody{
+        display: block;
+        gap: 25px;
+    }
+    .AddressBox{
+        border: 1px solid grey;
+        width: 340px;
+        height: fit-content;
+        display: block;
+    
+    }
+    
+    .payment{
+        border: 1px solid grey;
+        width: 340px;
+        height: fit-content;
+        margin-bottom: 15px;
+    }
+    .paymentbox{
+     
+        width: 340px;
+        height: fit-content;
+        margin-bottom: 15px;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        background-color: rgb(253, 247, 238);
+    }
+    .AddressBoxbig{
+        border: 1px solid grey;
+        width: 340px;
+        height: fit-content;
+        margin-bottom: 15px; 
+        display: block;
+        overflow: scroll;
+    }
+    .AddressBoxsmall{
+        border: 1px solid grey;
+        width: 340px;
+        height: fit-content;
+        margin-bottom: 15px; 
+        display: block; 
+    }
+    .addresscard{
+        width: 100px;
+        border: 1px solid grey;
+    }
+    .leftside{
+        display: block;
+    }
+    
 }
