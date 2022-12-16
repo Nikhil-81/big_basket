@@ -1,5 +1,6 @@
 import {ChevronDownIcon } from "@chakra-ui/icons";
-import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
+
+import {CiLocationOn} from "react-icons/ci"
 import {
   Popover,
   PopoverTrigger,
@@ -25,7 +26,7 @@ const Location = () => {
       <PopoverTrigger>
         <Box display="flex" textAline="center">
         <Text cursor="pointer" display="flex" textAline="center" >
-      <LocationOnOutlinedIcon/>
+      <CiLocationOn fontSize={20}/>
          {pin},{city} 
         </Text>
         <ChevronDownIcon fontSize="22px"/>

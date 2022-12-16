@@ -6,9 +6,6 @@ import {
   InputRightAddon,
   Text,
 } from "@chakra-ui/react";
-import LocalOfferIcon from '@material-ui/icons/LocalOffer';
-import LocalPhoneOutlinedIcon from "@material-ui/icons/LocalPhoneOutlined";
-import PermIdentityOutlinedIcon from "@material-ui/icons/PermIdentityOutlined";
 import logo from "../../assets/logo.jpeg";
 import "./navbar_main.css";
 import Location from "./location";
@@ -17,6 +14,9 @@ import basket from "../../assets/basket.png";
 import { useState } from "react";
 import { useEffect } from "react";
 import Category from "./catagory";
+import {BsTelephone} from "react-icons/bs"
+import {CgProfile} from "react-icons/cg"
+import {FaTag} from "react-icons/fa"
 const NavbarMain = () => {
   const [isShown, setIsShown] = useState(false);
   useEffect(() => {}, [isShown]);
@@ -27,15 +27,15 @@ const NavbarMain = () => {
       <Box className="main">
         <Box className="navbar">
           <Box className="box-1">
-            <Box display="flex" textAline="center">
+            <Box display="flex" textAline="center" justifyContent={"center"}>
               {" "}
-              <LocalPhoneOutlinedIcon /> 1860 123 1000{" "}
+              <BsTelephone  fontSize={18}/> 1860 123 1000{" "}
             </Box>
             <Box display="flex" textAline="center">
               <Location />
             </Box>
             <Box display="flex" textAline="center">
-              <PermIdentityOutlinedIcon /> Login/Sign Up
+              <CgProfile fontSize={20} />  Login/Sign Up
             </Box>
           </Box>
           <Box className="box-2">
@@ -83,13 +83,13 @@ const NavbarMain = () => {
               <ChevronDownIcon fontSize="25px" />
             </Box>
             <Box className="offers">
-              <LocalOfferIcon color="primary"/>
+              <FaTag color="red" fontSize={18}/>
              <Text fontSize={14}  textAlign="center"> OFFERS</Text> </Box>
           </Box>
         </Box>
       
       </Box>
-      <Box w="100%" h="135px" ></Box>
+      <Box w="100%" h="135px"></Box>
       {isShown && (  <Box position="fixed" w="100%" h="auto"   >
         
         <Category Enter={() => setIsShown(true)}
