@@ -1,8 +1,20 @@
 import { Table, TableContainer, Tbody, Td, Tfoot, Th, Thead, Tr } from '@chakra-ui/react'
 import React from 'react'
+import { useSelector } from 'react-redux'
 import "../../Pages/Checkout/Styles/OrderSummary.css" 
 
 const OrderSummary = () => {
+  const cartData=useSelector((store)=>store.cart.cartData)
+  // console.log(cartData)
+  let totalmrp=0;
+    let discount=0;
+    let total=0
+    for(let i=0;i<cartData.length;i++){
+        totalmrp+=Number(Math.floor(cartData[i].price))
+        discount+=Number(((Math.round(cartData[i].price))*.1))
+    }
+    total+=Number(totalmrp-Math.round(discount))
+
   return (
     
       <div className='allorder'>
@@ -21,12 +33,12 @@ const OrderSummary = () => {
                        <Tr>
                          <Td>Basket Value</Td>
                          
-                         <Td isNumeric>₹totalmrp</Td>
+                         <Td isNumeric>₹ {totalmrp}</Td>
                        </Tr>
                       <Tr>
                          <Td>Discount On Value</Td>
                          
-                         <Td style={{color:"green", fontWeight:"500"}} isNumeric>-₹discount</Td>
+                         <Td style={{color:"green", fontWeight:"500"}} isNumeric>-₹ {discount}</Td>
                        </Tr>
                       
                        <Tr>
@@ -42,7 +54,7 @@ const OrderSummary = () => {
                        <Tr>
                          <Th>total Amount Payable</Th>
                         
-                         <Th isNumeric>₹total</Th>
+                         <Th isNumeric>₹ {total}</Th>
                        </Tr>
                      </Tfoot>
                    </Table>

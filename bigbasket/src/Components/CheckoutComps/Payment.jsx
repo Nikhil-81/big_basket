@@ -3,6 +3,8 @@ import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPane
 import React, { useState } from 'react'
 import "../../Pages/Checkout/Styles/payment.css"
 import Pin from '../../Components/CheckoutComps/Pin'
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 
 const Payment = () => {
@@ -14,10 +16,22 @@ const Payment = () => {
   const [divchange, setDivchange] = useState("Nbank")
   const [success, setSuccess] = useState("")
   const [note, setNote] = useState("")
-  
-  // const[active1,setActive2] = useState(false)
+  const cartData=useSelector((store)=>store.cart.cartData)
+  const navigate=useNavigate()
+  // console.log(cartData)
+  let totalmrp=0;
+    let discount=0;
+    let total=0
+    for(let i=0;i<cartData.length;i++){
+        totalmrp+=Number(Math.floor(cartData[i].price))
+        discount+=Number(((Math.round(cartData[i].price))*.1))
+    }
+    total+=Number(totalmrp-Math.round(discount))
 
-  console.log(pininput)
+    const handlesuccess=()=>{
+      navigate('/')
+    }
+
 
   return (
     <div className='payment'>
@@ -82,8 +96,8 @@ const Payment = () => {
                               <ModalHeader>Payment Process</ModalHeader>
                               <ModalCloseButton onClick={() => { setVerify(true); setSuccess(''); setNote('');setPininput(''); }} />
                               {verify &&
-                                <ModalBody>
-                                  <h1 >Amount Payable : </h1>
+                                <ModalBody textAlign={'center'}>
+                                  <h1 >Amount Payable : ₹ {total} </h1>
                                   <br />
                                   <Pin length={5} setPininput={setPininput} setNote={setNote} setVerify={setVerify} setSuccess={setSuccess} onclose={onClose} />
 
@@ -91,14 +105,17 @@ const Payment = () => {
                               }
                               {
                                 !verify&&pininput==="12345" &&
-                                <ModalBody>
+                                <ModalBody >
                                   <h1 style={{ margin: "auto" }}>{note}</h1>
                                   <img style={{ margin: "auto",width:"200px" }} src={success} alt="" />
+                                  {success==="https://i.pinimg.com/originals/6d/1d/a8/6d1da812e9c795eb5b2f4e8807d87014.gif"&&
+                                  <button onClick={handlesuccess} style={{border:"1px solid grey",padding:"5px",borderRadius:"20px"}}>Continue Shopping !</button>}
+                                  
                                 </ModalBody>
                               }
                               {
                                 !verify&&pininput!=="12345" &&
-                                <ModalBody>
+                                <ModalBody textAlign={'center'}>
                                   <h1 style={{ margin: "auto" }}>Wrong Credentials !</h1>
                                   <img style={{ margin: "auto",width:"200px" }} src="https://i.pinimg.com/originals/d0/17/47/d01747c4285afa4e7a6e8656c9cd60cb.png" alt="" />
                                 </ModalBody>
@@ -202,8 +219,8 @@ const Payment = () => {
                               <ModalHeader>Payment Process</ModalHeader>
                               <ModalCloseButton onClick={() => { setVerify(true); setSuccess(''); setNote('');setPininput(''); }} />
                               {verify &&
-                                <ModalBody>
-                                  <h1 >Amount Payable : </h1>
+                                <ModalBody textAlign={'center'}>
+                                  <h1 >Amount Payable : ₹ {total} </h1>
                                   <br />
                                   <Pin length={5} setPininput={setPininput} setNote={setNote} setVerify={setVerify} setSuccess={setSuccess} onclose={onClose} />
 
@@ -211,14 +228,17 @@ const Payment = () => {
                               }
                               {
                                 !verify&&pininput==="12345" &&
-                                <ModalBody>
+                                <ModalBody textAlign={'center'}>
                                   <h1 style={{ margin: "auto" }}>{note}</h1>
                                   <img style={{ margin: "auto",width:"200px" }} src={success} alt="" />
+                                  {success==="https://i.pinimg.com/originals/6d/1d/a8/6d1da812e9c795eb5b2f4e8807d87014.gif"&&
+                                  <button onClick={handlesuccess} style={{border:"1px solid grey",padding:"5px",borderRadius:"20px"}}>Continue Shopping !</button>}
+                                  
                                 </ModalBody>
                               }
                               {
                                 !verify&&pininput!=="12345" &&
-                                <ModalBody>
+                                <ModalBody textAlign={'center'}>
                                   <h1 style={{ margin: "auto" }}>Wrong Credentials !</h1>
                                   <img style={{ margin: "auto",width:"200px" }} src="https://i.pinimg.com/originals/d0/17/47/d01747c4285afa4e7a6e8656c9cd60cb.png" alt="" />
                                 </ModalBody>
@@ -302,8 +322,8 @@ const Payment = () => {
                               <ModalHeader>Payment Process</ModalHeader>
                               <ModalCloseButton onClick={() => { setVerify(true); setSuccess(''); setNote('');setPininput(''); }} />
                               {verify &&
-                                <ModalBody>
-                                  <h1 >Amount Payable : </h1>
+                                <ModalBody textAlign={'center'}>
+                                  <h1 >Amount Payable : ₹ {total} </h1>
                                   <br />
                                   <Pin length={5} setPininput={setPininput} setNote={setNote} setVerify={setVerify} setSuccess={setSuccess} onclose={onClose} />
 
@@ -311,14 +331,16 @@ const Payment = () => {
                               }
                               {
                                 !verify&&pininput==="12345" &&
-                                <ModalBody>
+                                <ModalBody textAlign={'center'}>
                                   <h1 style={{ margin: "auto" }}>{note}</h1>
                                   <img style={{ margin: "auto",width:"200px" }} src={success} alt="" />
+                                  {success==="https://i.pinimg.com/originals/6d/1d/a8/6d1da812e9c795eb5b2f4e8807d87014.gif"&&
+                                  <button onClick={handlesuccess} style={{border:"1px solid grey",padding:"5px",borderRadius:"20px"}}>Continue Shopping !</button>}
                                 </ModalBody>
                               }
                               {
                                 !verify&&pininput!=="12345" &&
-                                <ModalBody>
+                                <ModalBody textAlign={'center'}>
                                   <h1 style={{ margin: "auto" }}>Wrong Credentials !</h1>
                                   <img style={{ margin: "auto",width:"200px" }} src="https://i.pinimg.com/originals/d0/17/47/d01747c4285afa4e7a6e8656c9cd60cb.png" alt="" />
                                 </ModalBody>
