@@ -16,6 +16,7 @@ import React from "react";
 import DrawerBottom from "./BottomDrower";
 import Location from "./location";
 import Login from "../../Pages/Login/Login";
+import { Link } from "react-router-dom";
 const DrawerHam = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
@@ -50,7 +51,7 @@ const DrawerHam = () => {
             </Box>
             <Box className="pointer">
               <Text>Home</Text>
-              <Text>Smart Basket/My List</Text>
+              <Link to="/cart" ><Text>Smart Basket/My List</Text></Link>
                <Box><DrawerBottom /> </Box>
               <Text>Offers <span className="new">new</span></Text>
               <Text>The Beauty Store</Text>
