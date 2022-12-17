@@ -1,0 +1,181 @@
+.newOff {
+    width: 83%;
+    margin: auto;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(6, 1fr);
+    margin-top: 13px;
+}
+.home{
+    margin-top: 10px;
+}
+
+.newOff img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+
+}
+
+.newOff img:hover {
+    cursor: pointer;
+}
+
+.bank-offers {
+    width: 83%;
+    margin: auto;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 13px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+}
+
+.bank-offers img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+
+}
+
+.bank-offers img:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 5px;
+
+}
+
+.FnV {
+    width: 83%;
+    margin: auto;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(6, 1fr);
+    margin-top: 13px;
+}
+
+.FnV img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.FnV img:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 5px;
+
+}
+
+.Bevrage img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+}
+
+.Bevrage img:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
+}
+
+.Bevrage {
+    width: 83%;
+    margin: auto;
+    display: grid;
+    gap: 10px;
+    grid-template-areas:
+        "one one two three"
+        "one one four five";
+    grid-template-rows: auto;
+
+    margin-top: 13px;
+}
+
+.Bevrage>.bev1 {
+    grid-area: one;
+
+}
+
+.Bevrage>.bev2 {
+    grid-area: two;
+    ;
+}
+
+.Bevrage>.bev3 {
+    grid-area: three;
+
+}
+
+.Bevrage>.bev4 {
+    grid-area: four;
+
+}
+
+.Bevrage>.bev5 {
+    grid-area: five;
+
+}
+/* ----------------------------------media Quire------------------------------------- */
+
+@media screen and (max-width: 950px) {
+    .home{
+        margin-top: 50px;
+    }
+    .newOff {
+        width: 83%;
+        margin: auto;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 13px;
+    }
+
+    .bank-offers {
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .FnV {
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+       
+    }
+    
+    
+
+}
+@media screen and (max-width: 550px) {
+    .Bevrage {
+        width: 83%;
+        margin: auto;
+        display: grid;
+        gap: 10px;
+        grid-template-areas:
+            "one one "
+            "two three"
+            "four five";
+        grid-template-rows: auto;
+    
+        margin-top: 13px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .FnV {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+       
+    }
+}
