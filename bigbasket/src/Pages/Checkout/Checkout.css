@@ -8,6 +8,24 @@
     width: 100%;
     height: 110px;
     margin-bottom: 20px;
+    border: 1px solid rgb(164, 162, 162);
+    
+}
+.navdetail{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.navdetail>h1{
+    margin-bottom: 20px;
+    /* font-family: sans-serif; */
+    font-weight: 600;
+    color: grey;
+}
+.navdetail>img{
+    width: 107px;
 }
 .Allbody{
     display: flex;
@@ -63,8 +81,20 @@
     margin-bottom: 20px;
 }
 .Allbody{
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(1,1fr);
     gap: 25px;
+    grid-template-areas: 
+            "b "
+            "a "
+            ;
+}
+.Allbody>div:nth-child(1){
+    grid-area: a;
+}
+.Allbody>div:nth-child(2){
+    grid-area: b;
 }
 .AddressBox{
     border: 1px solid grey;
@@ -117,8 +147,20 @@
 
 @media only screen and (max-width: 420px) {
     .Allbody{
-        display: block;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(1,1fr);
         gap: 25px;
+        grid-template-areas: 
+                "b "
+                "a "
+                ;
+    }
+    .Allbody>div:nth-child(1){
+        grid-area: a;
+    }
+    .Allbody>div:nth-child(2){
+        grid-area: b;
     }
     .Checkout{
         margin: auto;
@@ -129,10 +171,7 @@
         height: 110px;
         margin-bottom: 20px;
     }
-    .Allbody{
-        display: block;
-        gap: 25px;
-    }
+    
     .AddressBox{
         border: 1px solid grey;
         width: 340px;

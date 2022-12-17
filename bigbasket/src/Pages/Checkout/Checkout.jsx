@@ -7,6 +7,7 @@ import "./Checkout.css"
 import AddressCard from '../../Components/CheckoutComps/AddressCard'
 import Payment from '../../Components/CheckoutComps/Payment'
 import OrderSummary from '../../Components/CheckoutComps/OrderSummary'
+import logo from "../../assets/logo.jpeg"
 
 const Checkout = () => {
     const dispatch = useDispatch()
@@ -40,9 +41,14 @@ console.log(style)
         }
     }, [ns])
     return (
-        <div className='Checkout'>
+        <div>
             <div className='fake'>
+            <div className='navdetail'>
+                <img src={logo} alt="" />
+                <h1>1860 123 1000</h1>
             </div>
+            </div>
+            <div className='Checkout'>
             <div className='Allbody'>
                 <div className='leftside'>
                     <div className={style||ns} onClick={changeStyle}>
@@ -81,6 +87,7 @@ console.log(style)
                     <OrderSummary />
                 </div>
             </div>
+        </div>
         </div>
     )
 }

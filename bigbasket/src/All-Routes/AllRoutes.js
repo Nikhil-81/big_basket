@@ -26,7 +26,7 @@ const AllRoutes = () => {
             <Route path="/products"         element={<><Navbar />    <AllProduct />  <Footer /></>} />
             <Route path="/products/:id"     element={<><Navbar />   <SingleProduct /><Footer /></>} />
             <Route path="/cart"             element={<><Navbar /><PrivateRoute><Cart /></PrivateRoute>    <Footer /></>} />
-            <Route path="/checkout"         element={<><PrivateRoute><Checkout /> </PrivateRoute></>} />
+            <Route path="/checkout"         element={<><Checkout /> </>} />
             {/* Admin Routes */}
             {/* <Route path="/admin/dashboard"  element={ <Admin> <Dashboard /> </Admin >} /> */}
             {/* <Route path="/admin/addProduct" element={ <Admin> <AddProduct/> </Admin >} /> */}

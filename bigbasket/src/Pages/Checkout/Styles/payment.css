@@ -16,7 +16,7 @@
     border-bottom: none;
 }
 .offer>h1{
-    color: rgb(41, 41, 41);
+    color: rgb(64, 64, 64);
     font-family: sans-serif;
     font-size: large;
     font-weight: 600;
@@ -39,7 +39,7 @@
     
 }
 .other>h1{
-    color: rgb(41, 41, 41);
+    color: rgb(64, 64, 64);
     font-family: sans-serif;
     font-size: large;
     font-weight: 600;
@@ -110,10 +110,11 @@
     height: 60px;
     justify-content: center;
     align-items: center;
+    text-align: center;
         
 }
 .leftothercomp>h1{
-    color: rgb(43, 43, 43);
+    color: rgb(64, 64, 64);
     font-family:Arial, Helvetica, sans-serif;
     margin-top: 15px;
 }
@@ -156,11 +157,11 @@
         border-bottom: none;
     }
     .offer>h1{
-        color: rgb(78, 77, 77);
+        color: rgb(64, 64, 64);
         font-family: sans-serif;
-        margin-left: -50px;
+        /* margin-left: -50px; */
         font-size: medium;
-        font-weight: 500;
+        font-weight: 700;
     }
     .offer>h3{
         color: grey;
@@ -175,6 +176,12 @@
         margin-right: 15px;
         border-bottom: none;
         
+    }
+    .other>h1{
+        color: rgb(64, 64, 64);
+        font-family: sans-serif;
+        font-size: large;
+        font-weight: 600;
     }
     .detailsother{
         
@@ -220,6 +227,14 @@
         border-radius: 0px;
         background-color: white;
     }
+    .leftother{
+        /* border: 1px solid red; */
+        width: 280px;
+        height: 100%;
+        display: block;
+        text-align: center;
+        
+    }
 
 
 }
@@ -244,7 +259,7 @@
         
     }
     .offer>h1{
-        color: rgb(41, 41, 41);
+        color: rgb(64, 64, 64);
         font-family: sans-serif;
         /* margin-left: -27px; */
         font-size: large;
@@ -268,7 +283,7 @@
         margin-left: 15px;
     }
     .other>h1{
-        color: rgb(41, 41, 41);
+        color: rgb(64, 64, 64);
         font-family: sans-serif;
         font-size: large;
         font-weight: 600;
