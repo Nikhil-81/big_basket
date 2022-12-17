@@ -11,6 +11,8 @@ import {
 import Cart_row from "../../Components/cart_tableRow";
 import { clearCart, removeCart, updateCart } from "../../Redux/cart/actions";
 import CartTotalCard from "../../Components/cart_total_card";
+import Cart_item_Min from "../../Components/cart_comp/cart_item_min";
+import { Link } from "react-router-dom";
 
 
 
@@ -45,25 +47,31 @@ function hendleCartClickRemove_itrm(item){
             <Image Style={"margin: auto;"} src={emptycart_iamge_one}  boxSize='200px' />
             </Box>
             <br/>
-            <soan Style="display:block" >
-            <ContinueShopping cartbuttonname={"Continue Shopping"} Style="margin:none"/>
-            </soan>
+         
+            {/* <ContinueShopping cartbuttonname={"Continue Shopping"} Style={"display:block;margin:auto;"} /> */}
+            <Button  Style={"display:block;margin:auto;"}>Continue Shopping</Button>
+            
         </Hide>
-        <Show breakpoint='(max-width: 500px)'>
+        <Hide breakpoint='(min-width: 500px)'>
         <Text fontSize="2xl" >There are no items in your basket</Text>
             <hr/>
             <Box>
             <Image Style={"margin: auto;"} src={emptycart_iamge_two}  boxSize='200px' />
-            <ContinueShopping cartbuttonname={"Continue Shopping"}  />
+            {/* <ContinueShopping cartbuttonname={"Continue Shopping"} Style={"display:block;margin:auto;"} /> */}
+            <Button  Style={"display:block;margin:auto;"}>Continue Shopping</Button>
             </Box>
-        </Show>
+        </Hide>
         </>
     )
 }
 
 
     return (
+        <>
+        
+        
         <div className="cart_window" >
+            <Hide breakpoint='(max-width: 1136px)' >
         <TableContainer>
 <Table  variant='unstyled' colorScheme='gray' >
 <Thead>
@@ -98,8 +106,25 @@ function hendleCartClickRemove_itrm(item){
 <br/>
 <br/>
 
+    </Hide>
     </div>
+    <Show breakpoint='(max-width: 1136px)' >
+        <div Style="background:red;height:80vh;">
+            <div className="cart_min_box">
+                {cart_store.cartData.map(el=>(<>
+                <Cart_item_Min item_image={el.image} item_discription={el.title} item_price={el.price} Item_Quantity={el.qty} hendlecartUpdate={(val)=>hendlecartUpdate(val,el)} hendleCartClickRemove_itrm={()=>hendleCartClickRemove_itrm(el)} />
+                </>))}
+            </div>
+            <div Style="background:#37474f;height:20%;display:flex;justify-content:space-around;align-items: center;">
+                <div><Text ><b Style="color:white">Subtotal-</b><br/><b Style="color:white" >RS {(cart_store.subTotal).toFixed(2)}</b></Text></div>
+                <div><Link to="/Checkout"><Button Style="background:#e95f62;color:white" >Checkout</Button></Link></div>
+            </div>
+            </div>
+    </Show>
+    </>
+
 )
+
 }
 
 export default Cart;

@@ -25,8 +25,10 @@ const AllRoutes = () => {
             <Route path="/signup"           element={<><Navbar />     <Signup  />    </>} />
             <Route path="/products"         element={<><Navbar />    <AllProduct />  <Footer /></>} />
             <Route path="/products/:id"     element={<><Navbar />   <SingleProduct /><Footer /></>} />
-            <Route path="/cart"             element={<><Navbar /><PrivateRoute><Cart /></PrivateRoute>    <Footer /></>} />
-            <Route path="/checkout"         element={<><Checkout /> </>} />
+
+            <Route path="/cart"             element={<><Navbar /><PrivateRoute><Cart /></PrivateRoute>    </>} />
+            <Route path="/checkout"         element={<><PrivateRoute><Checkout /> </PrivateRoute></>} />
+
             {/* Admin Routes */}
             {/* <Route path="/admin/dashboard"  element={ <Admin> <Dashboard /> </Admin >} /> */}
             {/* <Route path="/admin/addProduct" element={ <Admin> <AddProduct/> </Admin >} /> */}

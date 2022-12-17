@@ -15,6 +15,7 @@ const Checkout = () => {
     const [style, setStyle] = useState("AddressBoxsmall");
     const [ns, setNs] = useState("")
 
+
     console.log(AllAddress)
     useEffect(() => {
         dispatch(getAdd)
@@ -40,6 +41,7 @@ console.log(style)
             setStyle("AddressBoxsmall")
         }
     }, [ns])
+
     return (
         <div>
             <div className='fake'>

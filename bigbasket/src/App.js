@@ -11,8 +11,8 @@ function App() {
   return (
     <div>
  
+  {/* <Cart/> */}
   <AllRoutes/>
-  <Login/>
     </div>
   );
 }
