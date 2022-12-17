@@ -105,7 +105,7 @@ const Payment = () => {
                               }
                               {
                                 !verify&&pininput==="12345" &&
-                                <ModalBody >
+                                <ModalBody textAlign={'center'}>
                                   <h1 style={{ margin: "auto" }}>{note}</h1>
                                   <img style={{ margin: "auto",width:"200px" }} src={success} alt="" />
                                   {success==="https://i.pinimg.com/originals/6d/1d/a8/6d1da812e9c795eb5b2f4e8807d87014.gif"&&
