@@ -378,11 +378,11 @@ const Payment = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Input variant='flushed' width='xs' marginLeft={'-250px'} />
+                  <Input variant='flushed' width='xs'  />
                   <br />
-                  <h3 style={{ color: "rgb(75, 75, 75)", marginLeft: "-270px", fontSize: "12px" }}>One time password (OTP) will be sent to this number</h3>
+                  <h3 style={{ color: "rgb(75, 75, 75)",  fontSize: "12px" }}>One time password (OTP) will be sent to this number</h3>
 
-                  <Button variant='solid' width='25%' marginLeft={'-370px'} marginTop="10px" borderRadius={'0px'} color={'white'} backgroundColor='rgb(132, 194, 37)'>
+                  <Button variant='solid' width='25%'  marginTop="10px" borderRadius={'0px'} color={'white'} backgroundColor='rgb(132, 194, 37)'>
                     SEND OTP</Button>
 
                 </AccordionPanel>
@@ -407,11 +407,11 @@ const Payment = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Input variant='flushed' width='xs' marginLeft={'-250px'} />
+                  <Input variant='flushed' width='xs'  />
                   <br />
-                  <h3 style={{ color: "rgb(75, 75, 75)", marginLeft: "-270px", fontSize: "12px" }}>One time password (OTP) will be sent to this number</h3>
+                  <h3 style={{ color: "rgb(75, 75, 75)",  fontSize: "12px" }}>One time password (OTP) will be sent to this number</h3>
 
-                  <Button variant='solid' width='25%' marginLeft={'-370px'} marginTop="10px" borderRadius={'0px'} color={'white'} backgroundColor='rgb(132, 194, 37)'>
+                  <Button variant='solid' width='25%'  marginTop="10px" borderRadius={'0px'} color={'white'} backgroundColor='rgb(132, 194, 37)'>
                     SEND OTP</Button>
 
                 </AccordionPanel>
@@ -436,11 +436,11 @@ const Payment = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Input variant='flushed' width='xs' marginLeft={'-250px'} />
+                  <Input variant='flushed' width='xs'  />
                   <br />
-                  <h3 style={{ color: "rgb(75, 75, 75)", marginLeft: "-270px", fontSize: "12px" }}>One time password (OTP) will be sent to this number</h3>
+                  <h3 style={{ color: "rgb(75, 75, 75)",  fontSize: "12px" }}>One time password (OTP) will be sent to this number</h3>
 
-                  <Button variant='solid' width='25%' marginLeft={'-370px'} marginTop="10px" borderRadius={'0px'} color={'white'} backgroundColor='rgb(132, 194, 37)'>
+                  <Button variant='solid' width='25%'  marginTop="10px" borderRadius={'0px'} color={'white'} backgroundColor='rgb(132, 194, 37)'>
                     SEND OTP</Button>
 
                 </AccordionPanel>
@@ -465,11 +465,11 @@ const Payment = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Input variant='flushed' width='xs' marginLeft={'-250px'} />
+                  <Input variant='flushed' width='xs'  />
                   <br />
-                  <h3 style={{ color: "rgb(75, 75, 75)", marginLeft: "-270px", fontSize: "12px" }}>One time password (OTP) will be sent to this number</h3>
+                  <h3 style={{ color: "rgb(75, 75, 75)",  fontSize: "12px" }}>One time password (OTP) will be sent to this number</h3>
 
-                  <Button variant='solid' width='25%' marginLeft={'-370px'} marginTop="10px" borderRadius={'0px'} color={'white'} backgroundColor='rgb(132, 194, 37)'>
+                  <Button variant='solid' width='25%'  marginTop="10px" borderRadius={'0px'} color={'white'} backgroundColor='rgb(132, 194, 37)'>
                     SEND OTP</Button>
 
                 </AccordionPanel>
@@ -494,11 +494,11 @@ const Payment = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Input variant='flushed' width='xs' marginLeft={'-250px'} />
+                  <Input variant='flushed' width='xs'  />
                   <br />
-                  <h3 style={{ color: "rgb(75, 75, 75)", marginLeft: "-270px", fontSize: "12px" }}>One time password (OTP) will be sent to this number</h3>
+                  <h3 style={{ color: "rgb(75, 75, 75)",  fontSize: "12px" }}>One time password (OTP) will be sent to this number</h3>
 
-                  <Button variant='solid' width='25%' marginLeft={'-370px'} marginTop="10px" borderRadius={'0px'} color={'white'} backgroundColor='rgb(132, 194, 37)'>
+                  <Button variant='solid' width='25%'  marginTop="10px" borderRadius={'0px'} color={'white'} backgroundColor='rgb(132, 194, 37)'>
                     SEND OTP</Button>
 
                 </AccordionPanel>
