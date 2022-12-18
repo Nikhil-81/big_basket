@@ -339,7 +339,7 @@ console.log(divchange)
                   <br />
                   <h3 style={{ color: "rgb(75, 75, 75)", marginLeft: "auto", fontSize: "12px" }}>One time password (OTP) will be sent to this number</h3>
 
-                  <Button onClick={onOpen} variant='solid' width='auto' marginLeft={'auto'} marginTop="10px" borderRadius={'0px'} color={'white'} backgroundColor='rgb(132, 194, 37)'>
+                  <Button onClick={onOpen} variant='solid' width='25%' marginLeft={'auto'} marginTop="10px" borderRadius={'0px'} color={'white'} backgroundColor='rgb(132, 194, 37)'>
                     SEND OTP</Button>
                     <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
                             <ModalOverlay />
