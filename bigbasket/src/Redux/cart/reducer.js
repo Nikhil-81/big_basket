@@ -9,29 +9,21 @@ import {GET_CART_REQUEST,GET_CART_SUCCESS,GET_CART_FAILURE,
    const initcartstate={
     cartLoding:false,cartSucess:false,casrError:false,cartData:[
         {
-            "id": 19,
-            "title": "Opna Women's Short Sleeve Moisture",
-            "price": 7.95,
-            "description": "100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort",
-            "category": "women's clothing",
-            "image": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
-            "rating": {
-              "rate": 4.5,
-              "count": 146
-            },
+            "id": 1,
+            "name": "Fresho Tomato - Hybrid (Loose), 1 kg",
+            "category": "vegtables",
+            "image": "https://media.istockphoto.com/id/489555238/photo/tomato-isolated-on-the-white-background.jpg?s=612x612&w=0&k=20&c=2z-Ln2cFwERRbYNiyfzsD9v5RpQJpOYFFQ6kILUlTlc=",
+            "rating": 4.5,
+            "price": 30,
             "qty":1
           },
           {
-            "id": 1,
-            "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-            "price": 109.95,
-            "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-            "category": "men's clothing",
-            "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-            "rating": {
-              "rate": 3.9,
-              "count": 120
-            },
+            "id": 2,
+            "name": "Fresho Potato (Loose), 1 kg",
+            "category": "vegtables",
+            "image": "https://media.istockphoto.com/id/1173936233/photo/young-potato.jpg?s=612x612&w=0&k=20&c=pmgsK4bOOQZ98xLQBmXkER9ofxDi5PpV8VkqiTYrzwc=",
+            "rating": 4.7,
+            "price": 42,
             "qty":1
           }
          

@@ -85,7 +85,7 @@ function hendleCartClickRemove_itrm(item){
 </Thead>
 <Tbody>
     {cart_store.cartData.map(el=>(<Tr className="Cart_table_row" >
-        <Cart_row cartItemName={el.title} hendlecartUpdate={(val)=>hendlecartUpdate(val,el)} cartItemPrice={el.price} cartItemQuantity={el.qty} cartItemTotal={el.qty*el.price} hendleCartClickRemove_itrm={()=>hendleCartClickRemove_itrm(el)} />
+        <Cart_row cartItemName={el.name} hendlecartUpdate={(val)=>hendlecartUpdate(val,el)} cartItemPrice={el.price} cartItemQuantity={el.qty} cartItemTotal={el.qty*el.price} hendleCartClickRemove_itrm={()=>hendleCartClickRemove_itrm(el)} />
     </Tr>))}
 </Tbody>
 </Table>
@@ -112,7 +112,7 @@ function hendleCartClickRemove_itrm(item){
         <div Style="background:red;height:80vh;">
             <div className="cart_min_box">
                 {cart_store.cartData.map(el=>(<>
-                <Cart_item_Min item_image={el.image} item_discription={el.title} item_price={el.price} Item_Quantity={el.qty} hendlecartUpdate={(val)=>hendlecartUpdate(val,el)} hendleCartClickRemove_itrm={()=>hendleCartClickRemove_itrm(el)} />
+                <Cart_item_Min item_image={el.image} item_discription={el.name} item_price={el.price} Item_Quantity={el.qty} hendlecartUpdate={(val)=>hendlecartUpdate(val,el)} hendleCartClickRemove_itrm={()=>hendleCartClickRemove_itrm(el)} />
                 </>))}
             </div>
             <div Style="background:#37474f;height:20%;display:flex;justify-content:space-around;align-items: center;">
