@@ -1,3 +1,7 @@
+.changest{
+    background-color: rgb(253, 247, 238);
+}
+
 .payment{
     display: block;
     background-color: rgb(253, 247, 238);
@@ -195,7 +199,9 @@
         border: 1px solid grey;
         border-right: none;
     }
-    
+    .upiother{
+        width: 300px;
+    }
     .detailsoffer{
         border: 1px solid grey;
         width: 618px;
