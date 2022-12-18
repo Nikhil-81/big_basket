@@ -1,12 +1,39 @@
-import { Box, Heading, Text, Input, Grid } from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react';
+import { Box, Heading, Text, Input, Grid, Image, Button } from '@chakra-ui/react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useParams } from 'react-router-dom';
+import { getProducts } from "../../Redux/products/actions";
+import { addToCart } from '../../Redux/cart/actions';
+import { ProductCard } from '../../Components/ProductCard';
 
 export function AllProduct() {
-  const dummyArr = new Array(20).fill('hello')
-  console.log(dummyArr, 'arr')
+  // const products = new Array(20).fill('hello')
+  
+
+  // console.log("hello page load success")
+  const currentUrl = useParams();
+  // console.log(currentUrl,"hello")
+  let products = useSelector(store => store.products.products);
+  // console.log(products,"array");
+  const dispatch = useDispatch();
+
+  products = products.filter((item) =>  item.category === currentUrl.category)
+  // console.log(products,"filtered array");
+
+  
+
+
+  useEffect(() => {
+    if(products.length === 0){
+       dispatch(getProducts());
+    }
+   },[products.length,dispatch])
+
+  // console.log(products, 'arr')
+  
   return (
     <Box>
-      <Heading>Product Page</Heading>
+      <Heading>{currentUrl.category}</Heading>
 
       <Box
         className="MainBox"
@@ -257,25 +284,50 @@ export function AllProduct() {
           </Box>
         </Box>
 
-        <Grid
-          templateColumns="repeat(4, 1fr)"
-          gap={6}
+
+
+        <Box w="90%">
+        <Box
+          
+          display="grid"
+          gridTemplateColumns="repeat(4,1fr)"
+          gap={2}
           className="Product-cards"
-          border="1px solid black"
-          w="80%"
+          
+          height="auto"
+          w="auto"
         >
-          {dummyArr.map((item) => {
+          {products.map((item) =>  {
             return (
-              <Box border="1px solid black" w>
-                <Link to="/products/:id"> Single Product Page </Link>
-              </Box>
-            )
-          })}
-        </Grid>
+              <ProductCard item={item} />
+            //  <Box display="flex" flexDirection="column" justifyContent="space-between" p="5px" boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" key={item.id}  h="auto" >
+            //   <Link  to={`/product/single-product/${item.id}`}>
+                
+            //     <Box  h="auto" >
+            //     <Box ><Image src={item.image} h="fit-content" /></Box>
+             
+            //     <Text h="fit-content"  >{item.name}</Text>
+
+             
+            //     <Text h="fit-content"  >Rs.{item.price}</Text>
+            //     </Box>
+            //   </Link>
+
+            //     <Box  align="center"  h="50px" > 
+            //     { addToBasket && <Button  onClick={() => handleAddToBasket(item)} ml="5px" >ADD TO BASKET</Button> }
+            //     { addBtn && <Button ml="5px" onClick={handleReduceItem} >-</Button> }
+            //     {/* { addbtn && <Text></Text> } */}
+            //     { addBtn && <Button ml="5px" >+</Button> }
+            //    </Box>
+               
+            //   </Box>
+            
+           )})}
+        </Box>
+        </Box>
+
+
       </Box>
     </Box>
   )
 }
-
-
-

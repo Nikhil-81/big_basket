@@ -1,17 +1,18 @@
 import { Box, Text } from "@chakra-ui/react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./category.css";
 const c1 = [
-  "Fruits & Vegetables",
-  "Foodgrains, Oil & Masala",
-  " Bakery, Cakes & Dairy",
-  "Beverages",
-  "Snacks & Branded Foods",
+  "vegetables",
+  "Oil",
+  "Masala",
+  "SNACKS & BRANDED FOODS",
+  "EGGS, MEAT & FISH",
+  "CLEANING & HOUSEHOLD",
+  "Tea",
   "Beauty & Hygiene",
   " Cleaning & Household",
-  "Kitchen, Garden & Pets",
-  "Eggs, Meat & Fish",
-  " Gourmet & World Food",
+  " Bakery, Cakes & Dairy",
   " Baby Care",
   "View A",
 ];
@@ -53,7 +54,7 @@ const Category = ({ Enter, Leave }) => {
       <Box className="category" onMouseLeave={Leave} onMouseEnter={Enter}>
         <Box className="cat-1">
           {cat1?.map((el, index) => {
-            return <Box key={index}> <Text key={index}>{el}</Text> <hr/></Box>;
+            return <Box key={index}> <Link to={`/products/${el}`} > <Text key={index}>{el}</Text> </Link> <hr/></Box>;
           })}
         </Box>
         <Box className="cat-2">
