@@ -1,4 +1,4 @@
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Flex, FormControl, FormLabel, Heading, HStack, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, TagLabel, useDisclosure } from '@chakra-ui/react';
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Flex, FormControl, FormLabel, Heading, HStack, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Select, Stack, TagLabel, useDisclosure } from '@chakra-ui/react';
 
 import React, { useState } from 'react'
 import "../../Pages/Checkout/Styles/payment.css"
@@ -31,7 +31,7 @@ const Payment = () => {
     const handlesuccess=()=>{
       navigate('/')
     }
-
+console.log(divchange)
 
   return (
     <div className='payment'>
@@ -53,11 +53,11 @@ const Payment = () => {
         <div className='detailsother'>
           <div className='detailsotherbox'>
             <div className='leftother'>
-              <div className='leftothercomp' onClick={() => setDivchange("Nbank")}><h1>Net Banking</h1></div>
-              <div className='leftothercomp' onClick={() => setDivchange("upi")}><h1>UPI</h1></div>
-              <div className='leftothercomp' onClick={() => setDivchange("credit")}><h1>Credit Card/Debit Card</h1></div>
-              <div className='leftothercomp' onClick={() => setDivchange("wallet")}><h1>Wallet</h1></div>
-              <div className='leftothercomp' onClick={() => setDivchange("otp")}><h1>Cash On Delivery</h1></div>
+              <div className={`${'leftothercomp'} ${divchange==='Nbank'?'changest':''}`} onClick={() => setDivchange("Nbank")}><h1>Net Banking</h1></div>
+              <div className={`${'leftothercomp'} ${divchange==='upi'?'changest':''}`} onClick={() => setDivchange("upi")}><h1>UPI</h1></div>
+              <div className={`${'leftothercomp'} ${divchange==='credit'?'changest':''}`} onClick={() => setDivchange("credit")}><h1>Credit Card/Debit Card</h1></div>
+              <div className={`${'leftothercomp'} ${divchange==='wallet'?'changest':''}`} onClick={() => setDivchange("wallet")}><h1>Wallet</h1></div>
+              <div className={`${'leftothercomp'} ${divchange==='otp'?'changest':''}`} onClick={() => setDivchange("otp")}><h1>Cash On Delivery</h1></div>
             </div>
             <div className='rightother'>
 
@@ -262,16 +262,43 @@ const Payment = () => {
                   <Heading size={'md'} marginTop='10px' color={'rgb(50, 50, 50)'} textAlign={'start'} marginLeft={'20px'}>Pay Using Credit/Debit Card</Heading>
                   <div className='rightotherbox'>
                     <FormControl isRequired>
-                      <FormLabel>First name</FormLabel>
-                      <Input size='sm' variant='flushed' placeholder='First name' />
+                      <FormLabel>Card Number</FormLabel>
+                      <Input textAlign={'start'} size='sm' variant='flushed' placeholder='Card Number' />
+                      <br />
                       <br />
                       <HStack spacing='24px'>
 
-                        <Input size='sm' variant='flushed' placeholder='First name' />
-                        <Input size='sm' variant='flushed' placeholder='First name' />
+                      <Stack spacing={3}>
+                        <Select placeholder='Month' size='xs' >
+                        <option value='option1'>Jan</option>
+                        <option value='option2'>Feb</option>
+                        <option value='option3'>Mar</option>
+                        <option value='option3'>Apr</option>
+                        <option value='option3'>May</option>
+                        <option value='option3'>Jun</option>
+                        <option value='option3'>Jul</option>
+                        <option value='option3'>Aug</option>
+                        <option value='option3'>Sep</option>
+                        <option value='option3'>Oct</option>
+                        <option value='option3'>Nov</option>
+                        <option value='option3'>Dec</option>
+                        </Select>
+                      </Stack>
+                      <Stack spacing={3}>
+                        <Select placeholder='Year' size='xs' >
+                        <option value='option1'>2023</option>
+                        <option value='option2'>2024</option>
+                        <option value='option3'>2025</option>
+                        <option value='option3'>2026</option>
+                        <option value='option3'>2027</option>
+                        <option value='option3'>2028</option>
+                        <option value='option3'>2029</option>
+                        <option value='option3'>2030</option>
+                        </Select>
+                      </Stack>
                       </HStack>
                       <br />
-                      <Button>Make Payment</Button>
+                      <Button color={'white'} borderRadius='none' backgroundColor='rgb(132, 194, 37)'>Make Payment</Button>
                     </FormControl>
                   </div>
                 </div>
