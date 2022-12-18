@@ -20,76 +20,74 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
+import { RiEyeCloseFill,RiEyeFill } from "react-icons/ri";
+import { Link, useNavigate } from "react-router-dom";
+import { LOGINUSER } from "../../Redux/auth/actions";
+import { useDispatch } from "react-redux";
 
 export default function Login() {
-
-
   let [theme, setTheme] = useState(false);
+  let [passwordVisible, setPasswordVisible] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
   let [loginCred, setLoginCred] = useState({
+    
     email: "",
     password: "",
   });
-  
-  let [loginData, setLoginData] = useState([]);
-  let [status, setStatus] = useState(false);
+  const navigate = useNavigate();
+  let dispatch= useDispatch();
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  let [userData, setUserData] = useState([]);
 
-  let loginUser = async () => {
-    let res = await axios.get("http://localhost:3004/users");
-    setLoginData(res.data);
+
+
+  const handleSignUp = async () => {
+    return await axios
+      .get(`http://localhost:3004/users`)
+      .then((res) => setUserData(res.data))
+      .catch((err) => console.log(err));
+      
   };
+  console.log('2', userData);
+  const handleUserSignUp = () => {
+    console.log("clicked3", userData);
+    userData.map((ele) =>
+      ele.email == loginCred.email ?()=> { navigate("/"); alert('login successfully') }: alert('wrong credentials')
+      );
+      
+  }
+
   useEffect(() => {
-    loginUser();
-  }, [status]);
+    handleUserSignUp();
+  },[userData])
 
-  let checkUser = () => {
-    for (let i = 0; i < loginData.length; i++) {
-      if (
-        loginData[i].email === loginCred.email &&
-        loginData[i].password === loginCred.password
-      ) {
-        console.log("login success");
-        return;
-      } else {
-        newUser(loginCred);
-        setStatus((prev)=>!prev);
-        console.log("sign up & login success");
-        
-        return;
-      }
-    }
-  };
-
-  let newUser = async (loginCred) => {
-    let res = await axios.post("http://localhost:3004/users", loginCred);
-  };
+  
 
   // --------------------------------------------------
   return (
     <>
-      <Text fontSize={12} pl="2" onClick={onOpen}>Login / Sign Up</Text>
+      <Text fontSize={'sm'} onClick={onOpen}>LOGIN / SIGN UP</Text>
 
-      <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent w={"355px"} h="540px">
+      
+        
+        <Box w={"355px"} h="540px">
           <Box
             w="355px"
             h="540px"
             m={"auto"}
             borderRadius="5px"
             alignItems="center"
-            
             bgColor={theme ? "blackAlpha.900" : "whiteAlpha.50"}
             color={theme ? "whiteAlpha.900" : "blackAlpha.900"}
           >
             <Flex justify={"center"} ml="80px">
               <Text fontSize="15px" color="#84C225" fontWeight={"700"} m="20px">
-                LOGIN / SIGN UP
+                LOGIN
               </Text>
 
               <IconButton
                 aria-label="toggle theme"
+                bgColor={'#84C225'}
                 rounded="full"
                 size="xs"
                 mt={"20px"}
@@ -110,43 +108,103 @@ export default function Login() {
                   <FormLabel mt={"15px"}>Enter Email</FormLabel>
                   <Input
                     variant={"flushed"}
-                    pl="2"
                     borderBottom="2px solid"
                     type="email"
                     h={"40px"}
                     w="295px"
+                    value={loginCred.email}
                     onChange={(e) =>
                       setLoginCred({ ...loginCred, email: e.target.value })
                     }
                   />
                 </Box>
                 <Box>
-                  <FormLabel mt={"15px"}>Enter Password</FormLabel>
-                  <Input
-                    variant={"flushed"}
-                    pl="2"
-                    borderBottom="2px solid"
-                    type="password"
-                    h={"40px"}
-                    w="295px"
-                    onChange={(e) =>
-                      setLoginCred({ ...loginCred, password: e.target.value })
-                    }
-                  />
+                <Flex>
+                      <Box>
+                        <FormLabel mt={"15px"}>Enter Password</FormLabel>
+                        <Input
+                          variant={"flushed"}
+                          borderBottom="2px solid"
+                          type={passwordVisible? 'text': 'password'}
+                          h={"40px"}
+                          w="280px"
+                          value={loginCred.password}
+                          onChange={(e) =>
+                            setLoginCred({
+                              ...loginCred,
+                              password: e.target.value,
+                            })
+                          }
+                        />
+                      </Box>
+                      <Box display='flex' flexDirection='column-reverse' >
+                        <Text
+                          pb='10px'
+                          onClick={() => setPasswordVisible(!passwordVisible)}
+                        >
+                          <IconButton
+                            bgColor={"#84C225"}
+                            aria-label="Call Segun"
+                            size="xs"
+                            icon={
+                              passwordVisible ?  <RiEyeFill color="black" /> :<RiEyeCloseFill color="black" />
+                            }
+                          />
+                        </Text>
+                      </Box>
+                    </Flex>
                 </Box>
               </Flex>
-              <Flex h={"40px"} w="100%" justify={"center"}>
-                <Button
-                  bgColor={"#84C225"}
-                  w={"295px"}
-                  h="40px"
-                  border="none"
-                  borderRadius={"5px"}
-                  color={"white"}
-                  onClick={checkUser}
+             
+              <Flex
+                h={"60px"}
+                w="100%"
+                flexDirection="column"
+                align={"center"}
+                justify="end"
+              >
+                <Flex w="100%">
+                  <Text ml={"30px"} mb="5px" as="sup">
+                    Create an account?
+                  </Text>
+                </Flex>
+                <Flex
+                  flexDirection={"row"}
+                  w="295px"
+                  justifyContent="space-between"
                 >
-                  Continue
-                </Button>
+                  <Box>
+                   <Link to={'/signup'}>
+                   <Button
+                      colorScheme="blue"
+                      w={"85px"}
+                      h="40px"
+                      border="none"
+                      borderRadius={"5px"}
+                      color={"white"}
+                      onClick={()=>{handleSignUp();handleUserSignUp();}}
+                    >
+                      Sign Up
+                    </Button>
+                   </Link>
+                  </Box>
+                  <Box>
+                    <Button
+                      bgColor={"#84C225"}
+                      _hover={{
+                        bgColor: "#5e9112",
+                      }}
+                      w={"200px"}
+                      h="40px"
+                      border="none"
+                      borderRadius={"5px"}
+                      color={"white"}
+                      onClick={''}
+                    >
+                      Login
+                    </Button>
+                  </Box>
+                </Flex>
               </Flex>
             </Flex>
             <Text fontSize="xs" m={"10px 15px"} align="center">
@@ -154,8 +212,8 @@ export default function Login() {
               Privacy Policy.
             </Text>
           </Box>
-        </ModalContent>
-      </Modal>
+        </Box>
+      
     </>
   );
 }
