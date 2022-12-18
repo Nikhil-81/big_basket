@@ -2,7 +2,7 @@ import {Routes, Route} from 'react-router-dom';
 // import Dashboard from '../Pages/Admin/Dashboard/Dashboard';
 import Cart from '../Pages/Cart/Cart';
 import Checkout from '../Pages/Checkout/Checkout';
-import Home from '../Pages/Home/Home';
+import Home from '../Components/Home';
 import Login from '../Pages/Login/Login';
 import {AllProduct} from '../Pages/Product/AllProduct';
 import {SingleProduct} from '../Pages/Product/SingleProduct';
@@ -27,7 +27,7 @@ const AllRoutes = () => {
             <Route path="/product/single-product/:id"     element={<><Navbar />   <SingleProduct /><Footer /></>} />
 
             <Route path="/cart"             element={<><Navbar /><PrivateRoute><Cart /></PrivateRoute>    </>} />
-            <Route path="/checkout"         element={<><PrivateRoute><Checkout /> </PrivateRoute></>} />
+            <Route path="/checkout"         element={<><Checkout /> </>} />
 
             {/* Admin Routes */}
             {/* <Route path="/admin/dashboard"  element={ <Admin> <Dashboard /> </Admin >} /> */}
