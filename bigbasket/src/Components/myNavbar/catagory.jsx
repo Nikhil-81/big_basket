@@ -51,7 +51,7 @@ const Category = ({ Enter, Leave }) => {
   const [cat4] = useState(c4);
   return (
     <div>
-      <Box className="category" onMouseLeave={Leave} onMouseEnter={Enter}>
+      <Box className="category" zIndex={1} onMouseLeave={Leave} onMouseEnter={Enter}>
         <Box className="cat-1">
           {cat1?.map((el, index) => {
             return <Box key={index}> <Link to={`/products/${el}`} > <Text key={index}>{el}</Text> </Link> <hr/></Box>;

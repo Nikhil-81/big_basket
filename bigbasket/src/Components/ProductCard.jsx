@@ -9,7 +9,7 @@ export function ProductCard({item}){
     const [addToBasket, setAddToBasket] = useState(true);
   const [addBtn,setAddBtn] = useState(false);
 
-  const [qty, setQty ] = useState(0);
+  const [qty, setQty ] = useState(Number(1));
 
   let product = useSelector(store => store.cart)
   console.log(product,"product in product cards")
@@ -26,7 +26,7 @@ export function ProductCard({item}){
   }
 
   function handleAddItem(){
-    let val = setQty(prev=>prev+1)
+    let val = setQty(prev=>Number(prev)+1)
     dispatch(updateCart(val,item))
   }
 

@@ -5,13 +5,13 @@ import "../../Pages/Checkout/Styles/OrderSummary.css"
 
 const OrderSummary = () => {
   const cartData=useSelector((store)=>store.cart.cartData)
-  // console.log(cartData)
+  console.log("dsadsadsadsad",cartData)
   let totalmrp=0;
     let discount=0;
     let total=0
     for(let i=0;i<cartData.length;i++){
-        totalmrp+=Number(Math.floor(cartData[i].price))
-        discount+=Number(((Math.round(cartData[i].price))*.1))
+        totalmrp+=Number(Math.floor(cartData[i].price)*cartData[i].qty)
+        discount+=Number(((Math.round(totalmrp))*.1))
     }
     total+=Number(totalmrp-Math.round(discount))
 
