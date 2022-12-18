@@ -7,29 +7,7 @@ import {GET_CART_REQUEST,GET_CART_SUCCESS,GET_CART_FAILURE,
 
 
    const initcartstate={
-    cartLoding:false,cartSucess:false,casrError:false,cartData:[
-        {
-            "id": 1,
-            "name": "Fresho Tomato - Hybrid (Loose), 1 kg",
-            "category": "vegtables",
-            "image": "https://media.istockphoto.com/id/489555238/photo/tomato-isolated-on-the-white-background.jpg?s=612x612&w=0&k=20&c=2z-Ln2cFwERRbYNiyfzsD9v5RpQJpOYFFQ6kILUlTlc=",
-            "rating": 4.5,
-            "price": 30,
-            "qty":1
-          },
-          {
-            "id": 2,
-            "name": "Fresho Potato (Loose), 1 kg",
-            "category": "vegtables",
-            "image": "https://media.istockphoto.com/id/1173936233/photo/young-potato.jpg?s=612x612&w=0&k=20&c=pmgsK4bOOQZ98xLQBmXkER9ofxDi5PpV8VkqiTYrzwc=",
-            "rating": 4.7,
-            "price": 42,
-            "qty":1
-          }
-         
-       
-        
-    ],cartId:[19,1],subTotal:Number(117.9)
+    cartLoding:false,cartSucess:false,casrError:false,cartData:[],cartId:[],subTotal:Number(0)
    } 
 export const cartReducer=(state=initcartstate,{type,payload})=>{
 switch(type){

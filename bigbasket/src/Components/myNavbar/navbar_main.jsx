@@ -19,7 +19,7 @@ import {CgProfile} from "react-icons/cg"
 import {FaTag} from "react-icons/fa"
 import Login from "../../Pages/Login/Login";
 import { Link } from "react-router-dom";
-
+import {useSelector} from "react-redux"
 const NavbarMain = () => {
   const [isShown, setIsShown] = useState(false);
   useEffect(() => {}, [isShown]);
