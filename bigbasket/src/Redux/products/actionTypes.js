@@ -8,6 +8,11 @@ export const GET_SINGLE_PRODUCT_REQUEST = 'products/GET_SINGLE_PRODUCT_REQUEST';
 export const GET_SINGLE_PRODUCT_SUCCESS = 'products/GET_SINGLE_PRODUCT_SUCCESS';
 export const GET_SINGLE_PRODUCT_FAILURE = 'products/GET_SINGLE_PRODUCT_FAILURE';
 
+//on product page
+export const GET_PRODUCT_REQUEST = 'products_GET_PRODUCT_REQUEST';
+export const GET_PRODUCT_SUCCESS = 'products_GET_PRODUCT_SUCCESS';
+export const GET_PRODUCT_FAILURE = 'products_GET_PRODUCT_FAILURE';
+
 //for admin only
 export const ADD_PRODUCT_REQUEST = 'products/ADD_PRODUCT_REQUEST';
 export const ADD_PRODUCT_SUCCESS = 'products/ADD_PRODUCT_SUCCESS';

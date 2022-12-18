@@ -1,7 +1,72 @@
 import { Box, Heading, Image, Text, Input, Button } from '@chakra-ui/react'
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom'
+import { addToCart } from '../../Redux/cart/actions';
+import { getProducts } from '../../Redux/products/actions';
 
 export function SingleProduct() {
+  
+  const [addToBasket, setAddToBasket] = useState(true);
+  const [addBtn,setAddBtn] = useState(false);
+  // const id = useParams();
+
+
+  // // console.log(id  )
+  // let cart = useSelector(store => store.cart.cart)
+  // let products = useSelector(store => store.products.products);
+
+  // const dispatch = useDispatch();
+  // // console.log(products[1].id,"array");
+  
+  // useEffect(()=>{
+    
+  //   dispatch(getProducts());
+  // },[products])
+  
+
+  // products = products.filter(item => item.id === Number( id.id) );
+  // products = {...products[0]}
+  // console.log("products",products);
+
+  const {id} = useParams();
+  const products = useSelector((store) => store.products.products );
+  const [currentProduct,setCurrentProduct] = useState({});
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    if(products.length === 0){
+      dispatch(getProducts());
+    }
+  },[products.length,dispatch]);
+
+  useEffect(()=> {
+    if(id){
+      const product = products.find((item) => item.id === Number(id) );
+      console.log("product",product);
+      product && setCurrentProduct(product);
+    }
+  },[id,products])
+
+  
+
+  function handleAddToBasket(){
+    // console.log("clicked",singleP)
+    if(addToBasket === true){
+      setAddToBasket(false)
+      setAddBtn(true);
+    }
+    dispatch(addToCart(currentProduct))
+    // console.log(cart,"cart")
+  }
+
+  function handleReduceItem(){
+    if(addBtn === true){
+      setAddToBasket(true)
+      setAddBtn(false);
+    }
+  }
+
   const btnRef1 = useRef()
   const btnRef2 = useRef()
   const btnRef3 = useRef()
@@ -32,9 +97,11 @@ export function SingleProduct() {
     }
   }
 
+  
+
   return (
     <Box>
-      <Heading>Single Product Page</Heading>
+      <Heading>{currentProduct.name}</Heading>
 
       <Box className="container" w="80%" margin="auto" border="1px solid black" mt="50px" >
         <Box display="flex">
@@ -125,27 +192,30 @@ export function SingleProduct() {
           <Box className="singleProductBox" display="flex">
             <Box className="productImage">
               <Image
-                src="https://www.bigbasket.com/media/uploads/p/l/40075537_5-fresho-onion.jpg"
-                alt="onion-image"
+                src={currentProduct.image}
+                alt="image"
                 w="600px"
               />
             </Box>
 
             <Box className="productDetail" align="left" ml="20px" >
               <Text fontSize="xl">
-                <u>Fresho</u>
+                <u>{currentProduct.name}</u>
               </Text>
-              <Text>Fresh Onion, 2kg</Text>
+              <Text>{currentProduct.name}</Text>
               <Text>
                 MRP. <strike>Rs. 74.13</strike>{' '}
               </Text>
-              <Text>Price: Rs. 48(Rs.24/kg)</Text>
+              <Text>Price: Rs.{currentProduct.price}</Text>
               <Text>You Save: 35%</Text>
               <Text>(Inclusive of All Taxes)</Text>
 
               <Box display="flex">
                 <Input type="number" w="50px" outline="1px solid black" />
-                <Button ml="5px">ADD TO BASKET</Button>
+                { addToBasket && <Button onClick={handleAddToBasket} ml="5px" >ADD TO BASKET</Button> }
+                { addBtn && <Button ml="5px" onClick={handleReduceItem} >-</Button> }
+                {/* { addbtn && <Text></Text> } */}
+                { addBtn && <Button ml="5px" >+</Button> }
                 <Button ml="5px">SAVE</Button>
               </Box>
 
@@ -169,7 +239,7 @@ export function SingleProduct() {
         </Box>
 
         <Box className='productDescription' >
-            <Heading align="left" ml="20px" mt="50px" >Fresho Onion</Heading>
+            <Heading align="left" ml="20px" mt="50px" >{currentProduct.name}</Heading>
             <hr />
 
             <Heading align="left" ml="20px" mt="50px" >About the product</Heading>
@@ -195,5 +265,3 @@ export function SingleProduct() {
     </Box>
   )
 }
-
-
