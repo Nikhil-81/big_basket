@@ -20,6 +20,7 @@ import {FaTag} from "react-icons/fa"
 import Login from "../../Pages/Login/Login";
 import { Link } from "react-router-dom";
 import {useSelector} from "react-redux"
+import Signup from "../../Pages/Signup/Signup";
 const NavbarMain = () => {
   const [isShown, setIsShown] = useState(false);
   useEffect(() => {}, [isShown]);
@@ -41,7 +42,7 @@ const NavbarMain = () => {
               <Location />
             </Box>
             <Box display="flex" textAline="center">
-              <CgProfile fontSize={20} />  <Login/>
+              <CgProfile fontSize={20} />  <Link to={'/login'}> Login / SignUp</Link>
             </Box>
           </Box>
           <Box className="box-2">
