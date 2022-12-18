@@ -19,10 +19,14 @@ import {CgProfile} from "react-icons/cg"
 import {FaTag} from "react-icons/fa"
 import Login from "../../Pages/Login/Login";
 import { Link } from "react-router-dom";
+
 const NavbarMain = () => {
   const [isShown, setIsShown] = useState(false);
   useEffect(() => {}, [isShown]);
-  console.log(isShown);
+  // console.log(isShown);
+
+  let cartQty = useSelector(store => store.cart )
+  // console.log(cartQty,"cart qty in navbar")
  
   return (
     <Box >
@@ -61,11 +65,13 @@ const NavbarMain = () => {
             </Box>
             <Box display="flex" padding="10px" gap="10px" bg="#f2f2f2">
               <Image src={basket} w={8} h={8} alt="basket" />
-              <Link to="cart">
-              <Box textAlign="right">
-                <Text fontSize={14}>My Basket</Text>
-                <Text fontSize={14}>{0} Items</Text>
-              </Box>
+
+              <Link to="/cart">
+                <Box textAlign="right">
+                  <Text fontSize={14}>My Basket</Text>
+                  <Text fontSize={14}>{cartQty.cartData.length || 0} Items</Text>
+                </Box>
+
               </Link>
             </Box>
           </Box>

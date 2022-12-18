@@ -85,7 +85,7 @@ function hendleCartClickRemove_itrm(item){
 </Thead>
 <Tbody>
     {cart_store.cartData.map(el=>(<Tr className="Cart_table_row" >
-        <Cart_row cartItemName={el.title} hendlecartUpdate={(val)=>hendlecartUpdate(val,el)} cartItemPrice={el.price} cartItemQuantity={el.qty} cartItemTotal={el.qty*el.price} hendleCartClickRemove_itrm={()=>hendleCartClickRemove_itrm(el)} />
+        <Cart_row cartItemName={el.name} hendlecartUpdate={(val)=>hendlecartUpdate(val,el)} cartItemPrice={el.price} cartItemQuantity={el.qty} cartItemTotal={el.qty*el.price} hendleCartClickRemove_itrm={()=>hendleCartClickRemove_itrm(el)} />
     </Tr>))}
 </Tbody>
 </Table>
