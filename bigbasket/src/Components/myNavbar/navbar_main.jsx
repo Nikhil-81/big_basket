@@ -14,35 +14,59 @@ import basket from "../../assets/basket.png";
 import { useState } from "react";
 import { useEffect } from "react";
 import Category from "./catagory";
-import {BsTelephone} from "react-icons/bs"
-import {CgProfile} from "react-icons/cg"
-import {FaTag} from "react-icons/fa"
-import Login from "../../Pages/Login/Login";
+import { BsTelephone } from "react-icons/bs";
+import { CgProfile } from "react-icons/cg";
+import { FaTag } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import {useSelector} from "react-redux"
-import Signup from "../../Pages/Signup/Signup";
+import { useSelector } from "react-redux";
+import { CiLogout } from "react-icons/ci";
+// import Login from "../../Pages/Login/Login";
+// import Signup from "../../Pages/Signup/Signup";
 const NavbarMain = () => {
+  const [user, setUser] = useState(false);
   const [isShown, setIsShown] = useState(false);
+  let LC_USER = JSON.parse(localStorage.getItem("user")) || null;
+  useEffect(() => {
+    if (LC_USER) {
+      setUser(true);
+    } else {
+      setUser(false);
+    }
+  }, [LC_USER]);
   useEffect(() => {}, [isShown]);
   // console.log(isShown);
 
-  let cartQty = useSelector(store => store.cart )
+  let cartQty = useSelector((store) => store.cart);
   // console.log(cartQty,"cart qty in navbar")
- 
+
   return (
-    <Box >
+    <Box>
       <Box className="main">
         <Box className="navbar">
           <Box className="box-1">
             <Box display="flex" textAline="center" justifyContent={"center"}>
               {" "}
-              <BsTelephone  fontSize={18}/> 1860 123 1000{" "}
+              <BsTelephone fontSize={18} /> 1860 123 1000{" "}
             </Box>
             <Box display="flex" textAline="center">
               <Location />
             </Box>
             <Box display="flex" textAline="center">
-              <CgProfile fontSize={20} />  <Link to={'/login'}> Login / SignUp</Link>
+              {LC_USER ? (
+                <CiLogout fontSize={20} />
+              ) : (
+                <CgProfile fontSize={20} />
+              )}{" "}
+              {user ? (
+                <Text
+                  onClick={() => {
+                    localStorage.removeItem("user");
+                    setUser(false);
+                  }}
+                >{`${LC_USER.firstName}${LC_USER.lastName}`}</Text>
+              ) : (
+                <Link to={"/login"}> Login / SignUp</Link>
+              )}
             </Box>
           </Box>
           <Box className="box-2">
@@ -56,11 +80,16 @@ const NavbarMain = () => {
             />
             <Box width="50%" border="0.5px solid #70716f " borderRadius={5}>
               <InputGroup size="sm" width="100%">
-                <Input type="text" placeholder="Search for Products..." borderRadius={5}/>
+                <Input
+                  type="text"
+                  placeholder="Search for Products..."
+                  borderRadius={5}
+                />
                 <InputRightAddon
                   bg="#84c225"
-                  borderRightRadius={5} borderBottomRadius={5}
-                  children={<Search2Icon color="white"/>}
+                  borderRightRadius={5}
+                  borderBottomRadius={5}
+                  children={<Search2Icon color="white" />}
                 />
               </InputGroup>
             </Box>
@@ -70,9 +99,10 @@ const NavbarMain = () => {
               <Link to="/cart">
                 <Box textAlign="right">
                   <Text fontSize={14}>My Basket</Text>
-                  <Text fontSize={14}>{cartQty.cartData.length || 0} Items</Text>
+                  <Text fontSize={14}>
+                    {cartQty.cartData.length || 0} Items
+                  </Text>
                 </Box>
-
               </Link>
             </Box>
           </Box>
@@ -90,21 +120,28 @@ const NavbarMain = () => {
               color="white"
               alignItems="center"
             >
-              <Text fontWeight={700} fontSize="14px">SHOPE BY CATEGORY</Text>
+              <Text fontWeight={700} fontSize="14px">
+                SHOPE BY CATEGORY
+              </Text>
               <ChevronDownIcon fontSize="25px" />
             </Box>
             <Box className="offers">
-              <FaTag color="red" fontSize={18}/>
-             <Text fontSize={14}  textAlign="center"> OFFERS</Text> </Box>
+              <FaTag color="red" fontSize={18} />
+              <Text fontSize={14} textAlign="center">
+                {" "}
+                OFFERS
+              </Text>{" "}
+            </Box>
           </Box>
         </Box>
-      
       </Box>
       <Box w="100%" h="135px"></Box>
-      {isShown && (  <Box position="fixed" w="100%" h="auto"   >
-        
-        <Category Enter={() => setIsShown(true)}
-        Leave={() => setIsShown(false)}/>
+      {isShown && (
+        <Box position="fixed" w="100%" h="auto">
+          <Category
+            Enter={() => setIsShown(true)}
+            Leave={() => setIsShown(false)}
+          />
         </Box>
       )}
     </Box>

@@ -1,16 +1,16 @@
-import React, { useCallback, useEffect } from "react";
-import axios from "axios";
-import Login from "../Login/Login";
+import React, { useEffect } from "react";
+
 import {
   FormLabel,
   Input,
-  Stack,
+  
   Box,
   Flex,
   Button,
   Text,
-  Switch,
+  
   IconButton,
+  useToast,
 } from "@chakra-ui/react";
 
 import { useState } from "react";
@@ -18,61 +18,86 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import { RiEyeCloseFill, RiEyeFill } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { LOGINUSER } from "../../Redux/auth/actions";
-
-function userCred() {}
+import { register, reset } from "../../Redux/auth/authSlice";
 
 export default function Signup() {
   let [theme, setTheme] = useState(false);
   let [passwordVisible, setPasswordVisible] = useState(false);
+  let toast = useToast();
 
-  let [userData, setUserData] = useState([]);
+ 
   let [loginCred, setLoginCred] = useState({
     firstName: "",
     lastName: "",
     email: "",
     password: "",
   });
-  let [state,setState]= useState(false)
+  const { firstName, lastName, email, password } = loginCred;
+  
   const navigate = useNavigate();
-  let dispatch= useDispatch()
-  let user= useSelector(store=> store.auth)
-  console.log('user: ', user);
-
-  const handleSignUp = async () => {
-    return await axios
-      .get(`http://localhost:3004/users`)
-      .then((res) => setUserData(res.data))
-      .catch((err) => console.log(err));
-      
-  };
-
-  console.log('2', userData);
-  const handleUserSignUp = () => {
-    console.log("clicked3", userData);
-    userData.map((ele) => 
-      ele.email == loginCred.email ? setState(!state) :alert('wrong credentials')
-    );
-    if(state){
-      navigate('/login')
-    }else{
-      dispatch(LOGINUSER(loginCred)).then(()=> navigate("/"));
-    }
-
-  }
-
-
-
+  let dispatch = useDispatch();
+  let { user, isSuccess, isError } = useSelector((state) => state.auth);
   useEffect(() => {
-    handleUserSignUp();
-  },[userData])
+    if (isError) {
+      alert("error 404");
+    }
+    if (user && isSuccess) {
+      alert("sign up successfully");
+    }
+    dispatch(reset());
+  }, [isError, user, isSuccess, dispatch]);
+
+  const handleSignUp = () => {
+    if (!firstName || !lastName || !email || !password) {
+      return toast({
+        title: "Enter all credentials",
+        position: "top",
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+      });
+    }
+    if (!email.includes("@gmail.com")) {
+      return toast({
+        title: "Not a valid Email.",
+        description: "Enter a valid email",
+        position: "top",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+    }if(password.length<8){
+      return toast({
+        title: "Minimum password length required",
+        description: "Password should be at least 8 characters",
+        position: "top",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+    }
+     else {
+      dispatch(register(loginCred));
+       toast({
+        title: "Signup Successful",
+        position: "top",
+        status: "success",
+        duration: 9000,
+        isClosable: true,
+      });
+      navigate("/login");
+    }
+  };
 
   // --------------------------------------------------
   return (
     <>
-      <Text> SIGN UP</Text>
-
-      <Box w={"355px"} h="540px">
+      <Box
+        w={"355px"}
+        h="540px"
+        mx={"auto"}
+        boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
+      >
         <Box
           w="355px"
           h="540px"
@@ -229,7 +254,6 @@ export default function Signup() {
                       border="none"
                       borderRadius={"5px"}
                       color={"white"}
-                      // onClick={<Login/>}
                     >
                       Login
                     </Button>
@@ -246,7 +270,7 @@ export default function Signup() {
                     border="none"
                     borderRadius={"5px"}
                     color={"white"}
-                    onClick={()=>{handleSignUp();handleUserSignUp();}}
+                    onClick={handleSignUp}
                   >
                     Sign Up
                   </Button>
