@@ -70,6 +70,7 @@ const NavbarMain = () => {
             </Box>
           </Box>
           <Box className="box-2">
+            <Link to="/">
             <Image
               w="200px"
               h="80px"
@@ -78,6 +79,7 @@ const NavbarMain = () => {
               src={logo}
               alt="my basket"
             />
+            </Link>
             <Box width="50%" border="0.5px solid #70716f " borderRadius={5}>
               <InputGroup size="sm" width="100%">
                 <Input
@@ -121,7 +123,7 @@ const NavbarMain = () => {
               alignItems="center"
             >
               <Text fontWeight={700} fontSize="14px">
-                SHOPE BY CATEGORY
+                SHOP BY CATEGORY
               </Text>
               <ChevronDownIcon fontSize="25px" />
             </Box>
@@ -135,9 +137,9 @@ const NavbarMain = () => {
           </Box>
         </Box>
       </Box>
-      <Box w="100%" h="135px"></Box>
+      <Box w="100%" h="130px"></Box>
       {isShown && (
-        <Box position="fixed" w="100%" h="auto">
+        <Box position="fixed" w="100%" h="auto" zIndex={500} >
           <Category
             Enter={() => setIsShown(true)}
             Leave={() => setIsShown(false)}
