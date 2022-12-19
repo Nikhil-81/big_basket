@@ -13,6 +13,7 @@ import DrawerHam from "./Drawer";
 import "./navbar_min.css";
 import { Search2Icon } from "@chakra-ui/icons";
 import {CgProfile} from "react-icons/cg"
+import { Link } from "react-router-dom";
 const NavbarMin = () => {
   return (
     <Box>
@@ -20,6 +21,7 @@ const NavbarMin = () => {
       <Box className="navMin">
         <Box className="navContent">
           <DrawerHam />
+          <Link to="/">
           <Heading
             color="white"
             fontSize={30}
@@ -28,6 +30,7 @@ const NavbarMin = () => {
           >
             bigbasket
           </Heading>
+          </Link>
           <CgProfile fontSize={30} style={{ color: "white" }} />
         </Box>
         <Box w="99%" h="auto" margin="auto" mb="5px" bg="white" borderRadius={5} display="flex"> 
@@ -40,7 +43,7 @@ const NavbarMin = () => {
               </InputGroup>
         </Box>
       </Box>
-      <Box w="100%" h="80px" border="1px solid"></Box>
+      <Box w="100%" h="99px" border="1px solid"></Box>
     </Box>
   );
 };

@@ -34,6 +34,7 @@ const DrawerHam = () => {
         <DrawerContent p="0%" m="0%">
           <DrawerCloseButton color={"white"} />
           <DrawerHeader bg="black" color="white" h="50px">
+            <Link to="/login">
             <Button
               h="40px"
               fontSize={14}
@@ -41,8 +42,10 @@ const DrawerHam = () => {
               bg="black"
               border="1px solid white"
             >
-              <Login/>
+              Login/Sign Up
+              {/* <Login/> */}
             </Button>
+            </Link>
           </DrawerHeader>
 
           <DrawerBody cursor="pointer"> 
