@@ -15,8 +15,6 @@ const Checkout = () => {
     const [style, setStyle] = useState("AddressBoxsmall");
     const [ns, setNs] = useState("")
 
-
-    console.log(AllAddress)
     useEffect(() => {
         dispatch(getAdd)
         changeStyle()
@@ -28,10 +26,9 @@ const Checkout = () => {
             setStyle("AddressBoxbig");
         }
     };
-console.log(style)
+
     const cardclick = (id) => {
         setNs("AddressBoxsmall");
-        console.log("hi")
     }
     
     useEffect(() => {
