@@ -2,7 +2,7 @@ import { Box, Heading, Image, Text, Input, Button } from '@chakra-ui/react'
 import { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
-import { addToCart } from '../../Redux/cart/actions';
+import { addToCart, removeCart } from '../../Redux/cart/actions';
 import { getProducts } from '../../Redux/products/actions';
 
 export function SingleProduct() {
@@ -60,7 +60,8 @@ export function SingleProduct() {
     // console.log(cart,"cart")
   }
 
-  function handleReduceItem(){
+  function handleRemoveItem(){
+    dispatch(removeCart(currentProduct))
     if(addBtn === true){
       setAddToBasket(true)
       setAddBtn(false);
@@ -101,100 +102,18 @@ export function SingleProduct() {
 
   return (
     <Box>
-      <Heading>{currentProduct.name}</Heading>
 
-      <Box className="container" w="80%" margin="auto" border="1px solid black" mt="50px" >
-        <Box display="flex">
-          {/* <Box className="filter sidebar"> */}
-          <Box
-            className="Filter"
-            border="1px solid black"
-            h="auto"
-            p="10px"
-            w="20%"
-          >
-            <Heading>Filtering Options</Heading>
-            <hr />
-            <br />
+      <Heading ml="170px" >{currentProduct.name}</Heading>
+      <Box className="container" w="80%" margin="auto" boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" mt="50px" mb="50px" >
+        
+          
 
-            <Text>Category</Text>
-            <Box border="1px solid black" bg="black"></Box>
-            <Box
-              className="brands"
-              align="left"
-              overflow="scroll"
-              h="200px"
-              mt="5px"
-            >
-              <input type="checkbox" />
-              <label htmlFor="">xyz</label> <br />
-              <input type="checkbox" />
-              <label htmlFor="">xyz</label> <br />
-              <input type="checkbox" />
-              <label htmlFor="">xyz</label> <br />
-              <input type="checkbox" />
-              <label htmlFor="">xyz</label> <br />
-              <input type="checkbox" />
-              <label htmlFor="">xyz</label> <br />
-              <input type="checkbox" />
-              <label htmlFor="">xyz</label> <br />
-              <input type="checkbox" />
-              <label htmlFor="">xyz</label> <br />
-              <input type="checkbox" />
-              <label htmlFor="">xyz</label> <br />
-              <input type="checkbox" />
-              <label htmlFor="">xyz</label> <br />
-              <input type="checkbox" />
-              <label htmlFor="">xyz</label> <br />
-            </Box>
-
-            <br />
-            <Text>Brand</Text>
-            <Box border="1px solid black" bg="black"></Box>
-            <Input
-              type="text"
-              placeholder="Search brands"
-              w="100%"
-              mt="10px"
-              align="left"
-            />
-            <Box
-            className="brands"
-            align="left"
-            overflow="scroll"
-            h="200px"
-            mt="5px"
-          >
-            <input type="checkbox" />
-            <label htmlFor="">xyz</label> <br />
-            <input type="checkbox" />
-            <label htmlFor="">xyz</label> <br />
-            <input type="checkbox" />
-            <label htmlFor="">xyz</label> <br />
-            <input type="checkbox" />
-            <label htmlFor="">xyz</label> <br />
-            <input type="checkbox" />
-            <label htmlFor="">xyz</label> <br />
-            <input type="checkbox" />
-            <label htmlFor="">xyz</label> <br />
-            <input type="checkbox" />
-            <label htmlFor="">xyz</label> <br />
-            <input type="checkbox" />
-            <label htmlFor="">xyz</label> <br />
-            <input type="checkbox" />
-            <label htmlFor="">xyz</label> <br />
-            <input type="checkbox" />
-            <label htmlFor="">xyz</label> <br />
-          </Box>
-
-          </Box>
-
-          <Box className="singleProductBox" display="flex">
+          <Box className="singleProductBox" display="flex" justifyContent="space-around" p="20px"  >
             <Box className="productImage">
               <Image
                 src={currentProduct.image}
                 alt="image"
-                w="600px"
+                w="700px"
               />
             </Box>
 
@@ -213,9 +132,8 @@ export function SingleProduct() {
               <Box display="flex">
                 <Input type="number" w="50px" outline="1px solid black" />
                 { addToBasket && <Button onClick={handleAddToBasket} ml="5px" >ADD TO BASKET</Button> }
-                { addBtn && <Button ml="5px" onClick={handleReduceItem} >-</Button> }
-                {/* { addbtn && <Text></Text> } */}
-                { addBtn && <Button ml="5px" >+</Button> }
+                { addBtn && <Button ml="5px" onClick={handleRemoveItem} bg="red.400" >Remove</Button> }
+               
                 <Button ml="5px">SAVE</Button>
               </Box>
 
@@ -238,7 +156,7 @@ export function SingleProduct() {
           </Box>
         </Box>
 
-        <Box className='productDescription' >
+        {/* <Box className='productDescription' >
             <Heading align="left" ml="20px" mt="50px" >{currentProduct.name}</Heading>
             <hr />
 
@@ -258,10 +176,10 @@ export function SingleProduct() {
             <Text align="left" ml="20px" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, consequatur facere perferendis 
                 voluptatem iure in atque temporibus quae, dolor omnis eveniet cumque culpa ea nam, reiciendis neque fugiat quo error?</Text>
               
-        </Box>
+        </Box> */}
    
 
       </Box>
-    </Box>
+    
   )
 }

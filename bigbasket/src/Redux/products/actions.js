@@ -18,9 +18,9 @@ export const getProductError = () => {
     }
 }
 
-export const getProducts = () => (dispatch) => {
+export const getProducts = (params) => (dispatch) => {
         dispatch(getProductRequest());
-        return axios.get(`https://bigbasket-server.onrender.com/products`).then(r => { dispatch(getProductSuccess(r.data));console.log(r.data)})
+        return axios.get(`https://bigbasket-server.onrender.com/products`,params).then(r => { dispatch(getProductSuccess(r.data));console.log(r.data)})
         .catch(err => dispatch(getProductError()) )
     
 }

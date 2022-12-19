@@ -2,40 +2,51 @@ import { Box,Heading, Text, Button, Image } from "@chakra-ui/react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addToCart, updateCart } from "../Redux/cart/actions";
+import { addToCart, removeCart, updateCart } from "../Redux/cart/actions";
  
 export function ProductCard({item}){
 
-    const [addToBasket, setAddToBasket] = useState(true);
-  const [addBtn,setAddBtn] = useState(false);
 
-  const [qty, setQty ] = useState(Number(1));
+  
+
+ 
+  const [addToBasket, setAddToBasket] = useState( true);
+  const [addBtn,setAddBtn] = useState( false);
+  
+
+  
+
+  // const [qty, setQty ] = useState(Number(1));
 
   let product = useSelector(store => store.cart)
-  console.log(product,"product in product cards")
+  // console.log(product,"product in product cards")
   const dispatch = useDispatch();
 
   function handleAddToBasket(singleProduct){
-    console.log("clicked",singleProduct)
+    // console.log("clicked",singleProduct)
+    
     if(addToBasket === true){
+      // localStorage.setItem("addState",false)
+      // localStorage.setItem("removeState",true)
       setAddToBasket(false)
       setAddBtn(true);
     }
     dispatch(addToCart(singleProduct))
-  
   }
 
-  function handleAddItem(){
-    let val = setQty(prev=>Number(prev)+1)
-    dispatch(updateCart(val,item))
-  }
+  // function handleAddItem(){
+  //   let val = setQty(prev=>Number(prev)+1)
+  //   dispatch(updateCart(val,item))
+  // }
 
-  function handleReduceItem(){
-    if(qty === 1){
+  function handleRemoveItem(item){
+    
+    dispatch(removeCart(item))
+    if(addToBasket === false){
+      // localStorage.setItem("addState",true)
+      // localStorage.setItem("removeState",false)
       setAddToBasket(true)
       setAddBtn(false);
-    }else{
-        setQty(prev=>prev-1)
     }
   }
 
@@ -49,14 +60,15 @@ export function ProductCard({item}){
 
    
       <Text h="fit-content"  >Rs.{item.price}</Text>
+      <Text h="fit-content"  >Rating: {item.rating}</Text>
       </Box>
     </Link>
 
       <Box  align="center"  h="50px" display="flex" justifyContent="center" > 
       { addToBasket && <Button  onClick={() => handleAddToBasket(item)} ml="5px" >ADD TO BASKET</Button> }
-      { addBtn && <Button ml="5px" onClick={handleReduceItem} >-</Button> }
-      { addBtn && <Text mt="7px" ml="3px" w="50px" > {qty} </Text> }
-      { addBtn && <Button ml="5px" onClick={handleAddItem} >+</Button> }
+      { addBtn && <Button ml="5px" onClick={() => handleRemoveItem(item)} bg="red.400" >Remove</Button> }
+     
+      
      </Box>
      
     </Box>
