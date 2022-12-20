@@ -53,7 +53,7 @@ export function ProductCard({item}){
     return <Box display="flex" flexDirection="column" justifyContent="space-between" p="5px" boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" key={item.id}  h="auto" >
     <Link  to={`/product/single-product/${item.id}`}>
       
-      <Box  h="auto" >
+      <Box  h="auto" padding={5}>
       <Box ><Image src={item.image} h="fit-content" /></Box>
     
       <Text h="fit-content" noOfLines={2} >{item.name}</Text>

@@ -33,7 +33,7 @@ export default function Login() {
   useEffect(() => {
     const getUsers = async () => {
       try {
-        const res = await axios.get("http://localhost:3004/users");
+        const res = await axios.get("https://bigbasket-server.onrender.com/users/");
         setUserData(res.data);
       } catch (error) {
         console.log(error);

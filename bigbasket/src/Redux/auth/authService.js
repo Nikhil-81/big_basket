@@ -2,13 +2,13 @@
 import axios from "axios";
 
 export const registerService= async(user)=>{
-    let res= await axios.post('http://localhost:3004/users/', user)
+    let res= await axios.post('https://bigbasket-server.onrender.com/users/', user)
     console.log(res.data);
     return res.data;
 }
 
 export const loginService = async () => {
-    let res = await axios.get('http://localhost:3004/users/');
+    let res = await axios.get('https://bigbasket-server.onrender.com/users/');
     console.log(res.data);
     return res.data
 }

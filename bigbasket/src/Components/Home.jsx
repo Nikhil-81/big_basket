@@ -1,4 +1,5 @@
 import { Box, Image, Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 import Crowser from "./myHome/crowser";
 import Slider from "./myHome/slider";
@@ -54,6 +55,7 @@ import brand3 from "../assets/brand3.png";
 import brand4 from "../assets/brand4.png";
 import brand5 from "../assets/brand5.png";
 import brand6 from "../assets/brand6.png";
+import ProductSlider from "./myHome/ProductSlider";
 const off = [off1, off2, off3, off4, off5, off6];
 const bank_off = [bank_off1, bank_off2, bank_off3, bank_off4];
 const top_off = [top_off1, top_off2, top_off3, top_off4];
@@ -71,7 +73,10 @@ const Snacks = [snacks1, snacks2, snacks3, snacks4, snacks5, snacks6];
 const CleaningH = [cleaningH1, cleaningH2, cleaningH3, cleaningH4];
 const Beauty = [Beauty1, Beauty2, Beauty3, Beauty4, Beauty5];
 const Brand = [brand1, brand2, brand3, brand4, brand5, brand6];
+
 const Home = () => {
+ 
+ 
   return (
     <Box className="home">
       {/* -----------------------Crowser---------------------------- */}
@@ -95,16 +100,17 @@ const Home = () => {
         mt="30px"
         mb="20px"
         fontWeight={600}
-      >
+        >
         Bank Offers
       </Text>
-      <Box className="bank-offers">
+      <Box className="bank-offers" mb="50px">
         {bank_off?.map((el, index) => {
           return <Image key={index} src={el} alt="offes on products" />;
         })}
       </Box>
       {/* -----------------------Bank End---------------------------- */}
 
+        <ProductSlider/>
       {/* -----------------------Top Offers---------------------------- */}
 
       <Text
@@ -131,11 +137,12 @@ const Home = () => {
         mb="20px"
         fontWeight={600}
       >
+        
         Fruits and Vegetables
       </Text>
       <Box className="FnV">
         {FandV?.map((el, index) => {
-          return <Image key={index} src={el} alt=" products" />;
+          return <Link to={`/products/vegetables`}><Image key={index} src={el} alt=" products" /> </Link>;
         })}
       </Box>
 
@@ -173,7 +180,7 @@ const Home = () => {
       </Text>
       <Box className="Bevrage">
         {Beverages?.map((el, index) => {
-          console.log(el);
+        
           return (
             <Image
               key={index}
@@ -198,7 +205,7 @@ const Home = () => {
       </Text>
       <Box className="FnV">
         {Snacks?.map((el, index) => {
-          return <Image key={index} src={el} alt=" products" />;
+          return <Link to="/products/SNACKS & BRANDED FOODS"> <Image key={index} src={el} alt=" products" /> </Link>;
         })}
       </Box>
 
@@ -216,7 +223,7 @@ const Home = () => {
       </Text>
       <Box className="bank-offers">
         {CleaningH?.map((el, index) => {
-          return <Image key={index} src={el} alt="cleaning households" />;
+          return <Link to="/products/CLEANING & HOUSEHOLD"><Image key={index} src={el} alt="cleaning households" /> </Link>;
         })}
       </Box>
 
@@ -234,7 +241,7 @@ const Home = () => {
       </Text>
       <Box className="Bevrage">
         {Beauty?.map((el, index) => {
-          console.log(el);
+         
           return (
             <Image
               key={index}

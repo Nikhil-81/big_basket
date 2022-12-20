@@ -10,10 +10,26 @@ import {
   Box,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
+import { Link } from "react-router-dom";
 
+const c1 = [
+  "vegetables",
+  "Oil",
+  "Masala",
+  "SNACKS & BRANDED FOODS",
+  "EGGS, MEAT & FISH",
+  "CLEANING & HOUSEHOLD",
+  "Tea",
+  "Beauty & Hygiene",
+  " Cleaning & Household",
+  " Bakery, Cakes & Dairy",
+  " Baby Care",
+  "View A",
+];
 const DrawerBottom = () => {
+  const [cat1] = useState(c1);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
 
@@ -35,18 +51,9 @@ const DrawerBottom = () => {
 
           <DrawerBody>
             <Box className="categoryD">
-              <Text>Fruits & Vegetables</Text>
-              <Text>Foodgrains, Oil & Masala</Text>
-              <Text> Bakery, Cakes & Dairy</Text>
-              <Text>Beverages</Text>
-              <Text>Snacks & Branded Foods</Text>
-              <Text>Beauty & Hygiene</Text>
-              <Text> Cleaning & Household</Text>
-              <Text>Kitchen, Garden & Pets</Text>
-              <Text>Eggs, Meat & Fish</Text>
-              <Text> Gourmet & World Food</Text>
-              <Text> Baby Care</Text>
-              <Text>View A</Text>
+            {cat1?.map((el, index) => {
+            return <Box key={index}> <Link to={`/products/${el}`} > <li key={index}>{el}</li> </Link> <hr/></Box>;
+          })}
             </Box>
           </DrawerBody>
         </DrawerContent>
