@@ -12,9 +12,9 @@
 ---
 
 <h3>Features :</h3>
-<h5>Home Page with Navbar and Footer</h5>
-<h5>Authentication</h5>
-<h5>Filter and sort products by rating and price</h5>
-<h5>Single Product Page</h5>
-<h5>Cart page</h5>
-<h5>Add address details and make payment </h5>
+<h5>✨Home Page with Navbar and Footer</h5>
+<h5>✨Authentication</h5>
+<h5>✨Filter and sort products by rating and price</h5>
+<h5>✨Single Product Page</h5>
+<h5>✨Cart page</h5>
+<h5>✨Add address details and make payment </h5>
