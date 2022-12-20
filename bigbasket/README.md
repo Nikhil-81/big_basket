@@ -1,7 +1,7 @@
  <h1>Big-Basket Ecommerce</h1>
  
  <h3>Description :</h3>
- <p> It is a Grocery website where you can buy day to day grocery for your Household. We tried to implement all the feature I have mentioned below using the tech-Stack I have mentioned below. It is fully functional and responsive website. </p>
+It is a Grocery website where you can buy day to day grocery for your Household. We tried to implement all the feature I have mentioned below using the tech-Stack I have mentioned below. It is fully functional and responsive website.
  
  ---
 
