@@ -18,3 +18,9 @@
 <h5>✨Single Product Page</h5>
 <h5>✨Cart page</h5>
 <h5>✨Add address details and make payment </h5>
+
+---
+
+<h3>Some Glimps of Project :</h3>
+<h5>✨Home Page with Navbar and Footer</h5>
+<img src="https://1.bp.blogspot.com/-FG-13ngo1Es/Wrjp0k0yfQI/AAAAAAAAK4Q/8Z34iy_Hvjghl28840TqOBrZ51NDRAq4ACEwYBhgL/s1600/big-basket-website-review-new.jpg" alt="home Badge"/>
