@@ -1,7 +1,5 @@
  <h1>Big-Basket Ecommerce</h1>
 
---
-
 <h3>Tech Stack Used :</h3>
 <h5>⚡React</h5>
 <h5>⚡Redux</h5>
