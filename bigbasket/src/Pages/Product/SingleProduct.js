@@ -43,7 +43,7 @@ export function SingleProduct() {
   useEffect(()=> {
     if(id){
       const product = products.find((item) => item.id === Number(id) );
-      console.log("product",product);
+      // console.log("product",product);
       product && setCurrentProduct(product);
     }
   },[id,products])
