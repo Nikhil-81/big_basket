@@ -5,6 +5,13 @@ It is a Grocery website where you can buy day to day grocery for your Household.
 
 <h2>Deployed Link</h2>
 https://vaibhav-firke-makes-great-sites-e8301.netlify.app/
+
+<h2>Team Members</h2>
+1.Nikhil <br>
+2.Vaibhav <br>
+3.Prateek <br>
+4.Bikram <br>
+5.Sammyak <br>
  
  ---
 
