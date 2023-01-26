@@ -53,12 +53,13 @@ function hendleCartClickRemove_itrm(item){
             
         </Hide>
         <Hide breakpoint='(min-width: 500px)'>
+            <br/>
         <Text fontSize="2xl" >There are no items in your basket</Text>
             <hr/>
             <Box>
             <Image Style={"margin: auto;"} src={emptycart_iamge_two}  boxSize='200px' />
             {/* <ContinueShopping cartbuttonname={"Continue Shopping"} Style={"display:block;margin:auto;"} /> */}
-            <Button  Style={"display:block;margin:auto;"}>Continue Shopping</Button>
+           <Link to="/" ><Button  Style={"display:block;margin:auto;"}>Continue Shopping</Button></Link> 
             </Box>
         </Hide>
         </>

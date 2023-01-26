@@ -18,7 +18,7 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import { RiEyeCloseFill, RiEyeFill } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { register, reset } from "../../Redux/auth/authSlice";
+
 
 export default function Signup() {
   let [theme, setTheme] = useState(false);
@@ -32,62 +32,7 @@ export default function Signup() {
     email: "",
     password: "",
   });
-  const { firstName, lastName, email, password } = loginCred;
-  
-  const navigate = useNavigate();
-  let dispatch = useDispatch();
-  let { user, isSuccess, isError } = useSelector((state) => state.auth);
-  useEffect(() => {
-    if (isError) {
-      alert("error 404");
-    }
-    if (user && isSuccess) {
-      alert("sign up successfully");
-    }
-    dispatch(reset());
-  }, [isError, user, isSuccess, dispatch]);
-
-  const handleSignUp = () => {
-    if (!firstName || !lastName || !email || !password) {
-      return toast({
-        title: "Enter all credentials",
-        position: "top",
-        status: "warning",
-        duration: 5000,
-        isClosable: true,
-      });
-    }
-    if (!email.includes("@gmail.com")) {
-      return toast({
-        title: "Not a valid Email.",
-        description: "Enter a valid email",
-        position: "top",
-        status: "error",
-        duration: 5000,
-        isClosable: true,
-      });
-    }if(password.length<8){
-      return toast({
-        title: "Minimum password length required",
-        description: "Password should be at least 8 characters",
-        position: "top",
-        status: "error",
-        duration: 5000,
-        isClosable: true,
-      });
-    }
-     else {
-      dispatch(register(loginCred));
-       toast({
-        title: "Signup Successful",
-        position: "top",
-        status: "success",
-        duration: 9000,
-        isClosable: true,
-      });
-      navigate("/login");
-    }
-  };
+ 
 
   // --------------------------------------------------
   return (
@@ -140,13 +85,7 @@ export default function Signup() {
                     type="text"
                     h={"40px"}
                     w="132px"
-                    value={loginCred.firstName}
-                    onChange={(e) =>
-                      setLoginCred({
-                        ...loginCred,
-                        firstName: e.target.value,
-                      })
-                    }
+                  
                   />
                 </Box>
                 <Box>
@@ -157,10 +96,7 @@ export default function Signup() {
                     type="text"
                     h={"40px"}
                     w="132px"
-                    value={loginCred.lastName}
-                    onChange={(e) =>
-                      setLoginCred({ ...loginCred, lastName: e.target.value })
-                    }
+                  
                   />
                 </Box>
               </Flex>
@@ -179,10 +115,7 @@ export default function Signup() {
                     type="email"
                     h={"40px"}
                     w="295px"
-                    value={loginCred.email}
-                    onChange={(e) =>
-                      setLoginCred({ ...loginCred, email: e.target.value })
-                    }
+                  
                   />
                 </Box>
                 <Box>
@@ -195,13 +128,8 @@ export default function Signup() {
                         type={passwordVisible ? "text" : "password"}
                         h={"40px"}
                         w="280px"
-                        value={loginCred.password}
-                        onChange={(e) =>
-                          setLoginCred({
-                            ...loginCred,
-                            password: e.target.value,
-                          })
-                        }
+                    
+                       
                       />
                     </Box>
                     <Box display="flex" flexDirection="column-reverse">
@@ -270,7 +198,6 @@ export default function Signup() {
                     border="none"
                     borderRadius={"5px"}
                     color={"white"}
-                    onClick={handleSignUp}
                   >
                     Sign Up
                   </Button>

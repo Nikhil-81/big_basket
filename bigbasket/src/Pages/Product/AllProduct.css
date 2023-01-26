@@ -1,0 +1,78 @@
+.MainBox{
+    margin:auto;
+    display:grid;
+    grid-template-columns: 1.3fr 3fr;
+    justify-content:"space-around";
+
+}
+
+.Product-cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:2;
+    height:auto;
+    width:auto;
+}
+
+@media screen and (max-width:1130px) {
+    .MainBox{
+        margin:auto;
+        display:grid;
+        grid-template-columns: 1.3fr 3fr;
+        justify-content:"space-around";
+    
+    }
+    .Product-cards{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:2;
+        height:auto;
+        width:auto;
+    }
+}
+.Filter {
+    height: fit-content;
+}
+
+
+@media screen and (max-width:885px) {
+    .MainBox{
+        margin:auto;
+        display:grid;
+        grid-template-columns: 1.3fr 3fr;
+        justify-content:"space-around";
+    
+    }
+    .Product-cards{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:2;
+        height:auto;
+        width:auto;
+    }
+}
+
+@media screen and (max-width:660px) {
+    .MainBox{
+        margin:auto;
+        display:block;
+   
+    }
+    .hamburger_icon{
+        position: relative;
+        left:96%;
+        margin-top: -21%;
+    }
+  
+}
+
+@media screen and (max-width:409px) {
+
+    .Product-cards{
+        display:grid;
+        grid-template-columns:repeat(1,1fr);
+        gap:2;
+        height:auto;
+        width:auto;
+    }
+}

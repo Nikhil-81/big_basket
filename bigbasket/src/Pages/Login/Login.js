@@ -30,60 +30,7 @@ export default function Login() {
 
   let [userData, setUserData] = useState([]);
 
-  useEffect(() => {
-    const getUsers = async () => {
-      try {
-        const res = await axios.get("https://bigbasket-server.onrender.com/users/");
-        setUserData(res.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getUsers();
-  }, []);
-
-  const onSubmit = () => {
-    if (!loginCred.email || !loginCred.password) {
-      return toast({
-        title: "Enter all credentials",
-        position: "top",
-        status: "warning",
-        duration: 5000,
-        isClosable: true,
-      });
-    }
-
-    let loginState = userData.filter(
-      ({ email, password }) =>
-        email === loginCred.email && password === loginCred.password
-    );
-    if (loginState.length !== 0) {
-      localStorage.setItem("user", JSON.stringify(loginState[0]));
-      toast({
-        title: "Login Successful",
-        description: "Have A Nice Day!",
-        position: "top",
-        status: "success",
-        duration: 5000,
-        isClosable: true,
-      });
-      navigate("/");
-    } else {
-      toast({
-        title: "Wrong Credentials",
-        description: "Enter a valid email and password",
-        position: "top",
-        status: "error",
-        duration: 5000,
-        isClosable: true,
-      });
-      setLoginCred({
-        email: "",
-        password: "",
-      });
-    }
-  };
-
+ 
   // --------------------------------------------------
   return (
     <>
@@ -134,10 +81,6 @@ export default function Login() {
                   type="email"
                   h={"40px"}
                   w="295px"
-                  value={loginCred.email}
-                  onChange={(e) =>
-                    setLoginCred({ ...loginCred, email: e.target.value })
-                  }
                 />
               </Box>
               <Box>
@@ -150,13 +93,7 @@ export default function Login() {
                       type={passwordVisible ? "text" : "password"}
                       h={"40px"}
                       w="280px"
-                      value={loginCred.password}
-                      onChange={(e) =>
-                        setLoginCred({
-                          ...loginCred,
-                          password: e.target.value,
-                        })
-                      }
+                    
                     />
                   </Box>
                   <Box display="flex" flexDirection="column-reverse">
@@ -224,7 +161,7 @@ export default function Login() {
                     border="none"
                     borderRadius={"5px"}
                     color={"white"}
-                    onClick={onSubmit}
+                    // onClick={onSubmit}
                   >
                     Login
                   </Button>
