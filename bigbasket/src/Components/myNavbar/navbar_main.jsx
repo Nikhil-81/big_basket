@@ -20,6 +20,7 @@ import { FaTag } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { CiLogout } from "react-icons/ci";
+import { Usert_logout_request } from "../../Redux/auth/actions";
 // import Login from "../../Pages/Login/Login";
 // import Signup from "../../Pages/Signup/Signup";
 const NavbarMain = () => {
@@ -55,7 +56,7 @@ const NavbarMain = () => {
             </Box>
             <Box display="flex" textAline="center">
               {auth_sucess ? (
-                <CiLogout fontSize={20} />
+                <CiLogout fontSize={20} onClick={()=>dispatch(Usert_logout_request())} />
               ) : (
                 <CgProfile fontSize={20} />
               )}{" "}
