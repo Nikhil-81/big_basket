@@ -3,7 +3,7 @@ import axios from "axios"
 export  const UserLogin_request=(data)=>(dispatch)=>{
     dispatch({type:Login_request})
     try{
-        return axios.post("http://localhost:4002/user/login",data)
+        return axios.post("https://puzzled-skirt-ox.cyclic.app/user/login",data)
         .then(res=>(dispatch({type:Login_sucess,payload:res.data.user})))
         .catch(err=>dispatch({type:Login_error}))
     }
@@ -20,7 +20,7 @@ export  const UserSingin_request=(data)=>(dispatch)=>{
     try{
         console.log("userSingin_r_2")
 
-       return  axios.post("http://localhost:4002/user/ragister",data).then(res=>dispatch({type:Singin_sucess})).catch(err=>dispatch({type:Singin_error}))
+       return  axios.post("https://puzzled-skirt-ox.cyclic.app/user/ragister",data).then(res=>dispatch({type:Singin_sucess})).catch(err=>dispatch({type:Singin_error}))
     }
     catch(err){
         dispatch({type:Singin_error})

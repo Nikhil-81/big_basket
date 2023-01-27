@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-
+import "./Signup.css"
 import {
   FormLabel,
   Input,
@@ -44,8 +44,22 @@ const hendleChange=(e)=>{
 }
 function hendleSubmit(){
 dispatch(UserSingin_request(loginCred))
-.then(res=>(res.type=="Singin_sucess")?(navigate("/login")):(alert("ragistera fail")))
-.catch(err=>alert("ERROR"))
+.then(res=>(res.type=="Singin_sucess")?(navigate("/login")):(toast({
+  title: 'Ragistretion Fail',
+  description: "Try to ragister again",
+  status: 'error',
+  duration: 2000,
+  isClosable: true,
+  position:"top"
+})))
+.catch(err=>toast({
+  title: 'Ragistretion Fail',
+  description: "Try to ragister again",
+  status: 'error',
+  duration: 2000,
+  isClosable: true,
+  position:"top"
+}))
 
   // console.log(auth_state)
 }
@@ -54,6 +68,9 @@ console.log(auth_state)
   // --------------------------------------------------
   return (
     <>
+     {auth_state.auth_load?(<div>
+     <Text className="loading" >Plz wait....</Text>
+    </div>):("")}
       <Box
         w={"355px"}
         h="540px"

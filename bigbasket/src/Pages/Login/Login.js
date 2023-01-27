@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-
+import "./Login.css"
 import {
   FormLabel,
   Input,
@@ -38,7 +38,14 @@ const auth_state=useSelector((store)=>store.auth)
 function hendleSubmit(){
   // console.log(loginCred)
 dispatch(UserLogin_request(loginCred))
-.then(res=>(res.type=="Login_sucess")?(navigate("/")):(alert("Loigin fail")))
+.then(res=>(res.type=="Login_sucess")?(navigate("/")):(toast({
+  title: 'Ragistretion Fail',
+  description: "Try to ragister again",
+  status: 'error',
+  duration: 2000,
+  isClosable: true,
+  position:"top"
+})))
 .catch(err=>alert("ERROR"))
 }
 console.log(auth_state)
@@ -49,6 +56,10 @@ console.log(auth_state)
   // --------------------------------------------------
   return (
     <>
+    {auth_state.auth_load?(<div>
+     <Text className="loading" >Plz wait....</Text>
+    </div>):("")}
+    
       <Box
         w={"355px"}
         h="540px"
