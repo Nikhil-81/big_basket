@@ -52,7 +52,7 @@ const DrawerBottom = () => {
           <DrawerBody>
             <Box className="categoryD">
             {cat1?.map((el, index) => {
-            return <Box key={index}> <Link to={`/products/${el}`} > <li key={index}>{el}</li> </Link> <hr/></Box>;
+            return <Box key={index}> <Link onClick={onClose} to={`/products/${el}`} > <li key={index}>{el}</li> </Link> <hr/></Box>;
           })}
             </Box>
           </DrawerBody>

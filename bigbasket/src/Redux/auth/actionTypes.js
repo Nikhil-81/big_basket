@@ -1,14 +1,14 @@
+export const Login_request="Login_request"
+export const Login_error="Login_error"
+export const Login_sucess="Login_sucess"
 
-// // on login page
-// export const AUTH_LOGIN_REQUEST = 'auth/AUTH_LOGIN_REQUEST';
-// export const AUTH_LOGIN_SUCCESS = 'auth/AUTH_LOGIN_SUCCESS';
-// export const AUTH_LOGIN_FAILURE = 'auth/AUTH_LOGIN_FAILURE';
-// export const AUTH_LOGIN_RESET = 'auth/AUTH_LOGIN_RESET';
-// // on navbar logout button
-// export const AUTH_LOGOUT = 'auth/AUTH_LOGOUT_SUCCESS';
 
-// // on signup page
-// export const AUTH_REGISTER_REQUEST = 'auth/AUTH_REGISTER_REQUEST';
-// export const AUTH_REGISTER_SUCCESS = 'auth/AUTH_REGISTER_SUCCESS';
-// export const AUTH_REGISTER_FAILURE = 'auth/AUTH_REGISTER_FAILURE';
-// export const AUTH_REGISTER_RESET = 'auth/AUTH_REGISTER_RESET';
+export const Singin_request="Singin_request"
+export const Singin_error="Singin_error"
+export const Singin_sucess="Singin_sucess"
+
+export const Logout_request="Logout_request"
+export const Logout_error="Logout_error"
+export const Logout_sucess="Logout_sucess"
+
+

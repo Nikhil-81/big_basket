@@ -16,17 +16,32 @@ import { useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { RiEyeCloseFill, RiEyeFill } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
-
+import { UserLogin_request } from "../../Redux/auth/actions";
+import {useDispatch,useSelector} from "react-redux"
 export default function Login() {
   let [theme, setTheme] = useState(false);
   let [passwordVisible, setPasswordVisible] = useState(false);
   let toast = useToast();
-
+const dispatch=useDispatch()
+const auth_state=useSelector((store)=>store.auth)
   let [loginCred, setLoginCred] = useState({
     email: "",
     password: "",
   });
   const navigate = useNavigate();
+
+  const hendleChange=(e)=>{
+    const {name,value}=e.target
+    setLoginCred({...loginCred,[name]:value})
+}
+
+function hendleSubmit(){
+  // console.log(loginCred)
+dispatch(UserLogin_request(loginCred))
+.then(res=>(res.type=="Login_sucess")?(navigate("/")):(alert("Loigin fail")))
+.catch(err=>alert("ERROR"))
+}
+console.log(auth_state)
 
   let [userData, setUserData] = useState([]);
 
@@ -81,6 +96,8 @@ export default function Login() {
                   type="email"
                   h={"40px"}
                   w="295px"
+                  name="email"
+                  onChange={(e)=>hendleChange(e)}
                 />
               </Box>
               <Box>
@@ -93,6 +110,8 @@ export default function Login() {
                       type={passwordVisible ? "text" : "password"}
                       h={"40px"}
                       w="280px"
+                      name="password"
+                  onChange={(e)=>hendleChange(e)}
                     
                     />
                   </Box>
@@ -161,7 +180,7 @@ export default function Login() {
                     border="none"
                     borderRadius={"5px"}
                     color={"white"}
-                    // onClick={onSubmit}
+                    onClick={hendleSubmit}
                   >
                     Login
                   </Button>

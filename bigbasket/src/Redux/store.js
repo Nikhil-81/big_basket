@@ -13,12 +13,14 @@ import thunk from 'redux-thunk';
 import {cartReducer} from "../Redux/cart/reducer"
 import {productsReducer} from './products/reducer';
 import checkoutReducer from './Checkout/reducer';
+import { Auth_reducer } from "./auth/reducer";
 
 
 const rootReducer = combineReducers({
     products : productsReducer,
     cart: cartReducer,
-    checkout: checkoutReducer
+    checkout: checkoutReducer,
+    auth:Auth_reducer
 });
 
 // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

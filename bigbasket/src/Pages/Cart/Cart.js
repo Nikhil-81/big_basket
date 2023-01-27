@@ -49,7 +49,7 @@ function hendleCartClickRemove_itrm(item){
             <br/>
          
             {/* <ContinueShopping cartbuttonname={"Continue Shopping"} Style={"display:block;margin:auto;"} /> */}
-            <Button  Style={"display:block;margin:auto;"}>Continue Shopping</Button>
+           <Link to="/" > <Button  Style={"display:block;margin:auto;"}>Continue Shopping</Button></Link>
             
         </Hide>
         <Hide breakpoint='(min-width: 500px)'>

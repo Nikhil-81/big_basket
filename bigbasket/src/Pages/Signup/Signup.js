@@ -16,23 +16,40 @@ import {
 import { useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { RiEyeCloseFill, RiEyeFill } from "react-icons/ri";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { UserSingin_request } from "../../Redux/auth/actions";
+
+
+
 
 
 export default function Signup() {
   let [theme, setTheme] = useState(false);
   let [passwordVisible, setPasswordVisible] = useState(false);
   let toast = useToast();
-
- 
+const navigate=useNavigate()
+ const dispatch=useDispatch()
+ const auth_state=useSelector((store)=>store.auth)
   let [loginCred, setLoginCred] = useState({
-    firstName: "",
-    lastName: "",
+    firstname: "",
+    lastname: "",
     email: "",
     password: "",
   });
  
+const hendleChange=(e)=>{
+    const {name,value}=e.target
+    setLoginCred({...loginCred,[name]:value})
+}
+function hendleSubmit(){
+dispatch(UserSingin_request(loginCred))
+.then(res=>(res.type=="Singin_sucess")?(navigate("/login")):(alert("ragistera fail")))
+.catch(err=>alert("ERROR"))
+
+  // console.log(auth_state)
+}
+console.log(auth_state)
 
   // --------------------------------------------------
   return (
@@ -85,7 +102,8 @@ export default function Signup() {
                     type="text"
                     h={"40px"}
                     w="132px"
-                  
+                  name="firstname"
+                  onChange={(e)=>hendleChange(e)}
                   />
                 </Box>
                 <Box>
@@ -96,6 +114,8 @@ export default function Signup() {
                     type="text"
                     h={"40px"}
                     w="132px"
+                    name="lastname"
+                  onChange={(e)=>hendleChange(e)}
                   
                   />
                 </Box>
@@ -115,6 +135,8 @@ export default function Signup() {
                     type="email"
                     h={"40px"}
                     w="295px"
+                    name="email"
+                  onChange={(e)=>hendleChange(e)}
                   
                   />
                 </Box>
@@ -128,7 +150,8 @@ export default function Signup() {
                         type={passwordVisible ? "text" : "password"}
                         h={"40px"}
                         w="280px"
-                    
+                        name="password"
+                        onChange={(e)=>hendleChange(e)}
                        
                       />
                     </Box>
@@ -198,6 +221,7 @@ export default function Signup() {
                     border="none"
                     borderRadius={"5px"}
                     color={"white"}
+                    onClick={hendleSubmit}
                   >
                     Sign Up
                   </Button>

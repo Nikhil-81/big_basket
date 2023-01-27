@@ -18,21 +18,23 @@ import { BsTelephone } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import { FaTag } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { CiLogout } from "react-icons/ci";
 // import Login from "../../Pages/Login/Login";
 // import Signup from "../../Pages/Signup/Signup";
 const NavbarMain = () => {
-  const [user, setUser] = useState(false);
+  const dispatch=useDispatch()
+  const {auth_sucess,auth_error,auth_load,user}=useSelector((store)=>store.auth)
+  // const [user, setUser] = useState(false);
   const [isShown, setIsShown] = useState(false);
   let LC_USER = JSON.parse(localStorage.getItem("user")) || null;
-  useEffect(() => {
-    if (LC_USER) {
-      setUser(true);
-    } else {
-      setUser(false);
-    }
-  }, [LC_USER]);
+  // useEffect(() => {
+  //   if (LC_USER) {
+  //     setUser(true);
+  //   } else {
+  //     setUser(false);
+  //   }
+  // }, [LC_USER]);
   useEffect(() => {}, [isShown]);
   // console.log(isShown);
 
@@ -52,18 +54,16 @@ const NavbarMain = () => {
               <Location />
             </Box>
             <Box display="flex" textAline="center">
-              {LC_USER ? (
+              {auth_sucess ? (
                 <CiLogout fontSize={20} />
               ) : (
                 <CgProfile fontSize={20} />
               )}{" "}
-              {user ? (
+              {auth_sucess ? (
                 <Text
                   onClick={() => {
-                    localStorage.removeItem("user");
-                    setUser(false);
                   }}
-                >{`${LC_USER.firstName}${LC_USER.lastName}`}</Text>
+                >{`${user}`}</Text>
               ) : (
                 <Link to={"/login"}> Login / SignUp</Link>
               )}
